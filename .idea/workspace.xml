@@ -7,22 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a87b5dd8-6dbe-44f9-96a1-66d5a5b579af" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HMSH.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/base/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/base/controller/BaseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/base/dao/BaseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/base/dao/BaseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/base/model/Json.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/base/model/Json.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/base/service/BaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/base/service/BaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/base/service/impl/BaseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/base/service/impl/BaseServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zgc/util/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zgc/util/StringUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/System/AddUserT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/System/AddUserT.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,7 +21,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zgc/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
@@ -43,6 +29,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -95,7 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/zgc/util/StringUtil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/1.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
@@ -146,6 +140,7 @@
         <option value="$PROJECT_DIR$/src/test/java/System/AddUserT.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -218,20 +213,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zgc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HMSH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HMSH" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zgc" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HMSH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HMSH" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -460,7 +441,7 @@
       <workItem from="1529976179015" duration="12439000" />
       <workItem from="1529993319404" duration="11937000" />
       <workItem from="1530062213053" duration="18889000" />
-      <workItem from="1530153258216" duration="6576000" />
+      <workItem from="1530153258216" duration="7664000" />
     </task>
     <servers />
   </component>
@@ -476,7 +457,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64790000" />
+    <option name="totallyTimeSpent" value="65878000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -527,6 +508,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -536,16 +543,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zgc/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zgc/base/controller/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -874,6 +871,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
         </state>
       </provider>
     </entry>
