@@ -8,7 +8,7 @@ import java.util.Base64;
  */
 public class EncodeUtil {
 
-    public static String str2MD5(String strs) {
+    public static String toMD5(String strs) {
         /*
          * 加密需要使用JDK中提供的类
          */

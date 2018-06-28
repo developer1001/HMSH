@@ -4,6 +4,7 @@ import com.zgc.base.controller.BaseController;
 import com.zgc.base.model.Json;
 import com.zgc.model.User;
 import com.zgc.service.IUserService;
+import com.zgc.util.EncodeUtil;
 import com.zgc.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ public class UserController extends BaseController {
     IUserService userService;
 
     @RequestMapping("getUserById")
-    public void getUser(String id, HttpServletResponse response){
+    public User getUser(String id, HttpServletResponse response){
         if (StringUtil.isValid(id)){
             User user = userService.findById(Integer.parseInt(id));
             Json json = new Json();
@@ -26,7 +27,9 @@ public class UserController extends BaseController {
             json.setTotal(1);
             json.setData(user);
             writeJson(json,response);
+            return null;
         }
+        return null;
     }
     @RequestMapping("deleteUserById")
     public void deleteUserById(String id,HttpServletResponse response){
@@ -50,19 +53,23 @@ public class UserController extends BaseController {
 
     @RequestMapping("addUser")
     public void addUser(User user, HttpServletResponse response){
-            int a = userService.add(user);
-            if (a == 1){
-                Json json = new Json();
-                json.setSuccess(true);
-                json.setTotal(1);
-                json.setMsg("添加新用户成功");
-                writeJson(json,response);
-            }
+        User newUser = user;
+        newUser.setPassword(EncodeUtil.toMD5(user.getPassword()));
+        int a = userService.add(newUser);
+        if (a == 1){
+            Json json = new Json();
+            json.setSuccess(true);
+            json.setTotal(1);
+            json.setMsg("添加新用户成功");
+            writeJson(json,response);
+        }
     }
 
     @RequestMapping("updateUser")
     public void updateUser(User user, HttpServletResponse response){
-        int a = userService.update(user);
+        User newUser = user;
+        newUser.setPassword(EncodeUtil.toMD5(user.getPassword()));
+        int a = userService.update(newUser);
         int userId = user.getId().intValue();
         if (a == 1){
             Json json = new Json();

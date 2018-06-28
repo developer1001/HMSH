@@ -22,7 +22,7 @@ function find() {
         dataType:"json",
         success:function (data) {
             $("#result").html(JSON.stringify(data));
-            $("#updateResult").val(""),
+            //$("#updateResult").val(""),
             $("#up_userid").val(data.data.id);
             $("#up_username").val(data.data.user_name);
             $("#up_pwd").val(data.data.password);
@@ -53,22 +53,23 @@ function add() {
 }
 
 function  update() {
-    $.ajax({
-        type:"post",
-        url:"user/updateUser",
-        data:{
-            id:$("#up_userid").val(),
-            user_name:$("#up_username").val(),
-            password:$("#up_pwd").val(),
-            age:$("#up_age").val()
-        },
-        dataType:"json",
-        success:function (data) {
-            $("#updateResult").html(JSON.stringify(data));
-            $("#up_userid").val("");
-            $("#up_username").val("");
-            $("#up_pwd").val("");
-            $("#up_age").val("");
-        }
-    });
+    if ($("#up_username").val()!="" && $("#up_pwd").val()!= "" && $("#up_age").val()!="") {
+        $.ajax({
+            type: "post",
+            url: "user/updateUser",
+            data: {
+                id: $("#up_userid").val(),
+                user_name: $("#up_username").val(),
+                password: $("#up_pwd").val(),
+                age: $("#up_age").val()
+            },
+            dataType: "json",
+            success: function (data) {
+                $("#updateResult").html(JSON.stringify(data));
+                $("#up_username").val("");
+                $("#up_pwd").val("");
+                $("#up_age").val("");
+            }
+        });
+    }
 }
