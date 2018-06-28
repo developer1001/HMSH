@@ -2,9 +2,7 @@ package com.zgc.dao;
 
 import com.zgc.base.dao.BaseDao;
 import com.zgc.model.User;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
-
+//基本的增删改查在 BaseDao里已经实现，不需要自己去写，继承即可。
 public interface UserDao extends BaseDao<User> {
 
 }
