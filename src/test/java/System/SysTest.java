@@ -1,5 +1,6 @@
 package System;
 
+import com.zgc.base.WebServiceClient.User.invoke.Invokes;
 import com.zgc.controller.UserController;
 import com.zgc.model.User;
 import com.zgc.util.EncodeUtil;
@@ -31,5 +32,10 @@ public class SysTest {
     @After
     public void after(){
         System.out.println("测试工作完毕");
+    }
+
+    @Test
+    public  void UserWSTest(){
+       System.out.println( new Invokes().returnMsg());
     }
 }

@@ -1,6 +1,6 @@
 function del() {
     $.ajax({
-        url:"user/deleteUserById",
+        url:"user/deleteUserById.do",
         method:"post",
         dataType:"json",
         data:{
@@ -15,7 +15,7 @@ function del() {
 function find() {
     $.ajax({
         type:"post",
-        url:"user/getUserById",
+        url:"user/getUserById.do",
         data:{
             id:$("#userid").val(),
         },
@@ -35,7 +35,7 @@ function add() {
     if ($("#add_username").val()!="" && $("#add_pwd").val()!= "" && $("#add_age").val()!=""){
         $.ajax({
             type:"post",
-            url:"user/addUser",
+            url:"user/addUser.do",
             data:{
                 user_name:$("#add_username").val(),
                 password:$("#add_pwd").val(),
@@ -56,7 +56,7 @@ function  update() {
     if ($("#up_username").val()!="" && $("#up_pwd").val()!= "" && $("#up_age").val()!="") {
         $.ajax({
             type: "post",
-            url: "user/updateUser",
+            url: "user/updateUser.do",
             data: {
                 id: $("#up_userid").val(),
                 user_name: $("#up_username").val(),

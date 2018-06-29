@@ -175,11 +175,16 @@
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-core</artifactId>
+            <version>3.1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>3.1.8</version>
         </dependency>
     </dependencies>
     <build>
-        <finalName>projectM</finalName>
+        <finalName>HMSH</finalName>
     </build>
 </project>

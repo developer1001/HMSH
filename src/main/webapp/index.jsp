@@ -47,7 +47,7 @@
 </div>
 </div>
 <div>
-    <a href="user/toNewPage">跳转测试</a>
+    <a href="user/toNewPage.do">跳转测试</a>
 </div>
 </body>
 </html>
