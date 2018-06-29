@@ -36,6 +36,7 @@ public class SysTest {
 
     @Test
     public  void UserWSTest(){
-       System.out.println( new Invokes().returnMsg());
+          System.out.println( new Invokes().returnMsg());
+//        System.out.println( new Invokes().returnMsg2());
     }
 }
