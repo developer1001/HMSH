@@ -1,6 +1,6 @@
 function del() {
     $.ajax({
-        url:"user/deleteUserById",
+        url:"user/deleteUserById.do",
         method:"post",
         dataType:"json",
         data:{
@@ -15,14 +15,14 @@ function del() {
 function find() {
     $.ajax({
         type:"post",
-        url:"user/getUserById",
+        url:"user/getUserById.do",
         data:{
             id:$("#userid").val(),
         },
         dataType:"json",
         success:function (data) {
             $("#result").html(JSON.stringify(data));
-            $("#updateResult").val(""),
+            //$("#updateResult").val(""),
             $("#up_userid").val(data.data.id);
             $("#up_username").val(data.data.user_name);
             $("#up_pwd").val(data.data.password);
@@ -35,7 +35,7 @@ function add() {
     if ($("#add_username").val()!="" && $("#add_pwd").val()!= "" && $("#add_age").val()!=""){
         $.ajax({
             type:"post",
-            url:"user/addUser",
+            url:"user/addUser.do",
             data:{
                 user_name:$("#add_username").val(),
                 password:$("#add_pwd").val(),
@@ -53,22 +53,23 @@ function add() {
 }
 
 function  update() {
-    $.ajax({
-        type:"post",
-        url:"user/updateUser",
-        data:{
-            id:$("#up_userid").val(),
-            user_name:$("#up_username").val(),
-            password:$("#up_pwd").val(),
-            age:$("#up_age").val()
-        },
-        dataType:"json",
-        success:function (data) {
-            $("#updateResult").html(JSON.stringify(data));
-            $("#up_userid").val("");
-            $("#up_username").val("");
-            $("#up_pwd").val("");
-            $("#up_age").val("");
-        }
-    });
+    if ($("#up_username").val()!="" && $("#up_pwd").val()!= "" && $("#up_age").val()!="") {
+        $.ajax({
+            type: "post",
+            url: "user/updateUser.do",
+            data: {
+                id: $("#up_userid").val(),
+                user_name: $("#up_username").val(),
+                password: $("#up_pwd").val(),
+                age: $("#up_age").val()
+            },
+            dataType: "json",
+            success: function (data) {
+                $("#updateResult").html(JSON.stringify(data));
+                $("#up_username").val("");
+                $("#up_pwd").val("");
+                $("#up_age").val("");
+            }
+        });
+    }
 }

@@ -4,12 +4,17 @@
     <!-- 读取spring配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:applicationContext.xml,classpath:spring-mvc.xml,classpath:spring-mybatis.xml</param-value>
+        <param-value>classpath:applicationContext.xml,
+            classpath:spring-mvc.xml,classpath:spring-mybatis.xml</param-value>
     </context-param>
+    <!--读取spring配置文件，加入cxf配置文件-->
+    <!--<context-param>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>classpath:applicationContext.xml,-->
+            <!--classpath:spring-mvc.xml,classpath:spring-mybatis.xml,WEB-INF/cxf.xml</param-value>-->
+    <!--</context-param>-->
     <listener>
-        <listener-class>
-            org.springframework.web.context.ContextLoaderListener
-        </listener-class>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <!-- 设计路径变量值
     <context-param>
@@ -63,7 +68,7 @@
     <!-- 拦截设置 -->
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
     <!--不拦截静态资源-->
     <servlet-mapping>
@@ -75,7 +80,16 @@
         <url-pattern>*.png</url-pattern>
         <url-pattern>*.jpeg</url-pattern>
     </servlet-mapping>
-
+    <!-- cxf ，有需要的时候就开启激活-->
+    <!--<servlet>-->
+        <!--<servlet-name>CXFServlet</servlet-name>-->
+        <!--<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>-->
+        <!--<load-on-startup>2</load-on-startup>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>CXFServlet</servlet-name>-->
+        <!--<url-pattern>/webService/*</url-pattern>-->
+    <!--</servlet-mapping>-->
     <!--404和500异常的跳转-->
     <error-page>
         <error-code>404</error-code>
@@ -85,7 +99,10 @@
         <error-code>500</error-code>
         <location>/staticResource/error/500.html</location>
     </error-page>
-
+    <!-- 配置session超时时间，单位分钟 -->
+    <!--<session-config>-->
+        <!--<session-timeout>30</session-timeout>-->
+    <!--</session-config>-->
     <welcome-file-list>
         <welcome-file>1.jsp</welcome-file>
     </welcome-file-list>
