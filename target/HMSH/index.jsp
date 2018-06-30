@@ -30,14 +30,14 @@
     <textarea  id="updateResult" cols="40" rows="7"></textarea><br>
     <input type="hidden" id="up_userid">
     <label>用户名：</label><input type="text" id="up_username" ><br>
-    <label>密&nbsp;&nbsp;&nbsp;码：</label><input type="text" id="up_pwd" ><br>
+    <label>密&nbsp;&nbsp;&nbsp;码：</label><input type="text" id="up_pwd" placeholder="理应加密处理"><br>
     <label>年&nbsp;&nbsp;&nbsp;龄：</label><input type="text" id="up_age" >
 </div>
 <div class="addUser">
     <button onclick="add()">添加用户</button></br>
     <textarea  id="addResult" cols="40" rows="7"></textarea><br>
     <label>用户名：</label><input type="text" id="add_username"><br>
-    <label>密&nbsp;&nbsp;&nbsp;码：</label><input type="text" id="add_pwd"><br>
+    <label>密&nbsp;&nbsp;&nbsp;码：</label><input type="text" id="add_pwd" placeholder="理应加密处理"><br>
     <label>年&nbsp;&nbsp;&nbsp;龄：</label><input type="text" id="add_age">
 </div>
 <div class="deleteUser">
@@ -47,7 +47,7 @@
 </div>
 </div>
 <div>
-    <a href="user/toNewPage">跳转测试</a>
+    <a href="user/toNewPage.do">跳转测试</a>
 </div>
 </body>
 </html>
