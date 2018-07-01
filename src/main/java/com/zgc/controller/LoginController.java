@@ -46,7 +46,7 @@ public class LoginController extends BaseController {
 
     @RequestMapping("index")
     public String loginIndex(){
-        return "view/main.jsp";
+        return "main";
     }
 
     @RequestMapping("logout")
@@ -57,6 +57,6 @@ public class LoginController extends BaseController {
             session.removeAttribute("loginUser");
             session.invalidate();
         }
-        return "login.html";
+        return "login";
     }
 }

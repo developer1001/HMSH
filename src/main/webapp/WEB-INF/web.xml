@@ -22,7 +22,15 @@
         <param-value>springmvc.root</param-value>
     </context-param>
     -->
-
+    <!--请求过滤，验证session是否有效-->
+     <!--<filter>-->
+         <!--<filter-name>RequestFilter</filter-name>-->
+         <!--<filter-class>com.zgc.base.filter.SessionValidFilter</filter-class>-->
+     <!--</filter>-->
+     <!--<filter-mapping>-->
+         <!--<filter-name>RequestFilter</filter-name>-->
+         <!--<url-pattern>*.do</url-pattern>-->
+    <!--</filter-mapping>-->
     <!-- Spring字符集过滤器 -->
     <filter>
         <filter-name>SpringEncodingFilter</filter-name>
@@ -103,7 +111,7 @@
     </error-page>
     <!-- 配置session超时时间，单位分钟 -->
     <session-config>
-        <session-timeout>30</session-timeout>
+        <session-timeout>1</session-timeout>
     </session-config>
     <welcome-file-list>
         <welcome-file>1.jsp</welcome-file>

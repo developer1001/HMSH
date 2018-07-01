@@ -22,11 +22,15 @@ function find() {
         dataType:"json",
         success:function (data) {
             $("#result").html(JSON.stringify(data));
-            //$("#updateResult").val(""),
-            $("#up_userid").val(data.data.id);
-            $("#up_username").val(data.data.user_name);
-            $("#up_pwd").val(data.data.password);
-            $("#up_age").val(data.data.age);
+            if(data.success){
+                $("#up_userid").val(data.data.id);
+                $("#up_username").val(data.data.user_name);
+                $("#up_pwd").val(data.data.password);
+                $("#up_age").val(data.data.age);
+            }
+        },
+        complete:function (data) {
+            //console.log(data);
         }
     });
 }

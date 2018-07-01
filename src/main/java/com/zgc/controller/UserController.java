@@ -2,6 +2,7 @@ package com.zgc.controller;
 
 import com.zgc.base.controller.BaseController;
 import com.zgc.base.model.Json;
+import com.zgc.model.SysUser;
 import com.zgc.model.User;
 import com.zgc.service.IUserService;
 import com.zgc.util.EncodeUtil;
@@ -19,17 +20,14 @@ public class UserController extends BaseController {
     IUserService userService;
 
     @RequestMapping("getUserById")
-    public User getUser(String id, HttpServletResponse response){
+    public void getUser(String id, HttpServletResponse response){
         if (StringUtil.isValid(id)){
             User user = userService.findById(Integer.parseInt(id));
-            Json json = new Json();
-            json.setSuccess(true);
-            json.setTotal(1);
-            json.setData(user);
+            Json json = new Json(true,1,user);
             writeJson(json,response);
-            return null;
         }
-        return null;
+        else
+            writeJson(new Json(false,"用户不存在或者用户ID输入有误"),response);
     }
     @RequestMapping("deleteUserById")
     public void deleteUserById(String id,HttpServletResponse response){
@@ -53,6 +51,7 @@ public class UserController extends BaseController {
 
     @RequestMapping("addUser")
     public void addUser(User user, HttpServletResponse response){
+        System.out.println("addUser");
         User newUser = user;
         newUser.setPassword(EncodeUtil.toMD5(user.getPassword()));
         int a = userService.add(newUser);
@@ -82,6 +81,6 @@ public class UserController extends BaseController {
     @RequestMapping("toNewPage")
     public String toNewPage(){
         //加上前缀和后缀，组成新的url地址，页面跳转
-        return "view/test.jsp";
+        return "test";
     }
 }
