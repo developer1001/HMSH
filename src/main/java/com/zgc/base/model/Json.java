@@ -9,6 +9,31 @@ public class Json {
     private String msg;
     private Object data;
 
+    public Json(){
+    }
+
+    public Json(boolean success,String msg,Object data){
+        this.success = success;
+        this.msg = msg;
+        this.data = data;
+    }
+
+    public Json(boolean success,int total,Object data){
+        this.success = success;
+        this.total = total;
+        this.data = data;
+    }
+
+    public Json(boolean success,String msg){
+        this.success = success;
+        this.msg = msg;
+    }
+
+    public Json(boolean success,Object data){
+        this.success = success;
+        this.data = data;
+    }
+
     public Integer getTotal() {
         return total;
     }

@@ -102,9 +102,9 @@
         <location>/staticResource/error/500.html</location>
     </error-page>
     <!-- 配置session超时时间，单位分钟 -->
-    <!--<session-config>-->
-        <!--<session-timeout>30</session-timeout>-->
-    <!--</session-config>-->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
     <welcome-file-list>
         <welcome-file>1.jsp</welcome-file>
     </welcome-file-list>

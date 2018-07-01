@@ -1,5 +1,5 @@
 /**
- * 用户登录
+ * 用户登录,校验
  */
 function login() {
     var name = $("#loginName").val();
@@ -16,6 +16,8 @@ function login() {
             if (data.success){
                 window.location.href="login/index.do";
             }
+            else
+                alert(data.msg);
     }
     })
 }

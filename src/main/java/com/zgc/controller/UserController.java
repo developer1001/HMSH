@@ -82,6 +82,6 @@ public class UserController extends BaseController {
     @RequestMapping("toNewPage")
     public String toNewPage(){
         //加上前缀和后缀，组成新的url地址，页面跳转
-        return "test";
+        return "view/test.jsp";
     }
 }
