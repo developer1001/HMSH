@@ -14,14 +14,6 @@ public class SysTest {
     public void before(){
         System.out.println("所有方法开始测试");
     }
-//    @Test
-//    public void addUser(){
-//        User user = new User();
-//        user.setUser_name("test"+((int)(Math.random()*1000)));
-//        user.setPassword("test");
-//        user.setAge(((int)(Math.random()*50))+11);
-//         System.out.println(user);
-//    }
 
     @Test
     public void testEncode(){
