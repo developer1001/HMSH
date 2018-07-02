@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import com.zgc.util.BusinessCode;
 import com.zgc.util.EncodeUtil;
 import com.zgc.util.PPXHttpJsonResult;
-import org.apache.commons.lang3.StringUtils;
+import com.zgc.util.StringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -48,7 +48,7 @@ public class ComposeController {
     @RequestMapping(value = "/api/v1/tts", method = RequestMethod.POST)
     public PPXHttpJsonResult<JSONObject> tts(String description, HttpServletRequest request) throws UnsupportedEncodingException {
         PPXHttpJsonResult<JSONObject> result = new PPXHttpJsonResult<>();
-        if (StringUtils.isBlank(description)) {
+        if (StringUtil.isValid(description)) {
             result.setMsg("description不能为空!");
             result.setCode(BusinessCode.CODE_400);
             return result;
@@ -57,14 +57,14 @@ public class ComposeController {
         String url = "http://api.xfyun.cn/v1/service/v1";
         JSONObject jsonObject = sendPostRequest(url, description, request);
         String str = jsonObject.getString("data");
-        if (StringUtils.isNotBlank(str)){
+        if (StringUtil.isValid(str)){
             JSONObject object = new JSONObject();
             object.put("data", str);
             result.setData(object);
         } else {
             result.setMsg(jsonObject.getString("info"));
             String code = jsonObject.getString("code");
-            if(StringUtils.isNotBlank(code)) {
+            if(StringUtil.isValid(code)) {
                 result.setCode(Integer.valueOf(code));
             }
         }
