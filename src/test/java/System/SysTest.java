@@ -36,6 +36,7 @@ public class SysTest {
 
     @Test
     public  void UserWSTest(){
+        //默认关闭webservice,使用前需要解封web.xml文件相关配置行
           System.out.println( new Invokes().returnMsg());
 //        System.out.println( new Invokes().returnMsg2());
     }
