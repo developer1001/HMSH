@@ -35,7 +35,7 @@
         <property name="defaultContentType" value="text/html"/>
     </bean>
 
-    <!-- Session失效拦截 -->
+    <!-- Session失效拦截 ,不需要登录拦截的话，注掉这个拦截配置即可-->
     <mvc:interceptors>
         <!-- 定义拦截器 -->
         <mvc:interceptor>
