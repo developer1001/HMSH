@@ -9,74 +9,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>导航栏左</title>
-    <link rel="stylesheet" href="../staticResource/bootstrap-4.0.0/css/bootstrap.css" />
-    <link rel="stylesheet" href="../staticResource/css/main.css" />
-    <script type="text/javascript" src="../js/vue.js" ></script>
+    <meta charset="utf-8">
+    <title>管理台</title>
+
+    <link rel="stylesheet" type="text/css" href="../staticResource/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../staticResource/font/iconfont.css">
+
+    <script type="text/javascript" src="../js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="../staticResource/javascript/nav.js"></script>
 </head>
 <body>
-<nav class="title" role="navigation">
-    <div class="container-fluid">
-        <!--导航栏左边logo跟项目名称-->
-        <div class="navbar-header">
-            <a class="navbar_title" href="#">项目名称</a>
-        </div>
-        <!--导航栏用户登录信息-->
-        <div class="navbar_user">
-            <img src="img/ani1.jpg"/>
-            <span>您好，用户！</span>
-        </div>
+<div class="top-div"></div>
+<div class="nav">
+    <div class="nav-top">
+        <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="../staticResource/img/mini.png" ></div>
     </div>
-</nav>
-<div class="body" id="body">
-    <div class="container">
-        <div class="row">
-            <!--左侧菜单栏-->
-            <div class="col-md-1 menu">
-                <ul class="nav menu_ul">
-                    <li v-for="(menu,index) in menus" v-bind:id="menu.id"
-                        v-bind:class="{checked: index == nowIndex}"
-                        v-on:click="setTab('menu',index,menus)">
-                        {{ menu.text }}
-                    </li>
-                </ul>
-            </div>
-            <!--菜单切换主题-->
-            <div class="col-md-11">
-                <div v-if="menu_index == 1">菜单一的内容</div>
-                <div v-if="menu_index == 2">菜单二的内容</div>
-                <div v-if="menu_index == 3">菜单三的内容</div>
-                <div v-if="menu_index == 4">菜单四的内容</div>
-                <div v-if="menu_index == 5">菜单五的内容</div>
-                <div v-if="menu_index == 6">菜单六的内容</div>
-            </div>
-        </div>
-    </div>
+    <ul>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_1"></i><span>网站配置</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>网站设置</span></a></li>
+                <li><a href="javascript:;"><span>友情链接</span></a></li>
+                <li><a href="javascript:;"><span>分类管理</span></a></li>
+                <li><a href="javascript:;"><span>系统日志</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>文章管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>站内新闻</span></a></li>
+                <li><a href="javascript:;"><span>站内公告</span></a></li>
+                <li><a href="javascript:;"><span>登录日志</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>订单管理</span><i class="my-icon nav-more"></i></a>
+            <ul>
+                <li><a href="javascript:;"><span>订单列表</span></a></li>
+                <li><a href="javascript:;"><span>打个酱油</span></a></li>
+                <li><a href="javascript:;"><span>也打酱油</span></a></li>
+            </ul>
+        </li>
+    </ul>
 </div>
-<div class="footer"></div>
 </body>
-<script>
-    var nav = new Vue({
-        el: '#body',
-        data: {
-            menus: [
-                {text: '菜单一'},
-                {text: '菜单二'},
-                {text: '菜单三'},
-                {text: '菜单四'},
-                {text: '菜单五'},
-                {text: '菜单六'}
-            ],
-            nowIndex: 0,
-            menu_index: 1
-        },
-        methods: {
-            setTab: function(name,index,menus){
-                this.nowIndex = index;
-                this.menu_index = index + 1;
-            }
-        }
-    });
-</script>
 </html>
