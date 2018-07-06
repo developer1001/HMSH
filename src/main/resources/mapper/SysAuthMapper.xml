@@ -3,26 +3,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的 -->
-<mapper namespace="com.zgc.dao.SysUserDao">
+<mapper namespace="com.zgc.dao.SysAuthDao">
     <!-- 添加数据 -->
-    <insert id="add" parameterType="com.zgc.model.SysUser">
-        insert into sys_user(userName,password,loginName) value(#{userName},#{password},#{loginName})
+    <insert id="add" parameterType="com.zgc.model.SysAuth">
+        insert into sys_auth(menuName,menuCode,menuUrl,description) value(#{menuName},#{menuCode},#{menuUrl},#{description})
     </insert>
     <!-- 删除数据 -->
     <delete id="deleteById" parameterType="int">
-        delete from sys_user where id = #{id}
+        delete from sys_auth where id = #{id}
     </delete>
     <!-- 修改数据 -->
-    <update id="update" parameterType="com.zgc.model.SysUser">
-        update sys_user set useName=#{userName},loginName=#{loginName},password=#{password} where id=#{id}
+    <update id="update" parameterType="com.zgc.model.SysAuth">
+        update sys_auth set menuName=#{menuName},menuCode=#{menuCode},menuUrl=#{menuUrl},description=#{description} where id=#{id}
     </update>
-    <!--根据id查询得到一个user对象-->
+    <!--根据id查询得到一个对象-->
     <select id="findById" parameterType="int"
-            resultType="com.zgc.model.SysUser">
-        select * from sys_user where id=#{id}
+            resultType="com.zgc.model.SysAuth">
+        select * from sys_auth where id=#{id}
     </select>
     <!--&lt;!&ndash; 查询所有的用户 &ndash;&gt;-->
     <!--<select id="list" resultType="com.mi.beans.User">-->
-        <!--select * from t_user;-->
+    <!--select * from t_user;-->
     <!--</select>-->
 </mapper>

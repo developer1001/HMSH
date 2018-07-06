@@ -4,6 +4,7 @@ public class SysAuth {
     private Integer id;//id
     private String menuName;//菜单名称
     private String menuCode;//菜单编码
+    private String menuUrl;//菜单路径
     private String description;//菜单描述
 
     public Integer getId() {
@@ -36,5 +37,13 @@ public class SysAuth {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getMenuUrl() {
+        return menuUrl;
+    }
+
+    public void setMenuUrl(String menuUrl) {
+        this.menuUrl = menuUrl;
     }
 }

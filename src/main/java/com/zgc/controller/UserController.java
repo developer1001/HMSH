@@ -22,8 +22,7 @@ public class UserController extends BaseController {
     IUserService userService;
 
     @RequestMapping("getUserById")
-    public void getUser(String id){
-        HttpServletResponse response = ((ServletWebRequest)RequestContextHolder.getRequestAttributes()).getResponse();
+    public void getUser(String id,HttpServletResponse response){
         if (StringUtil.isValid(id)){
             User user = userService.findById(Integer.parseInt(id));
             Json json = new Json(true,1,user);
@@ -33,8 +32,7 @@ public class UserController extends BaseController {
             writeJson(new Json(false,"用户不存在或者用户ID输入有误"),response);
     }
     @RequestMapping("deleteUserById")
-    public void deleteUserById(String id){
-        HttpServletResponse response = ((ServletWebRequest)RequestContextHolder.getRequestAttributes()).getResponse();
+    public void deleteUserById(String id,HttpServletResponse response){
         if (StringUtil.isValid(id)){
         int a =   userService.deleteById(Integer.parseInt(id));
           Json json = new Json();
@@ -54,9 +52,7 @@ public class UserController extends BaseController {
     }
 
     @RequestMapping("addUser")
-    public void addUser(User user){
-        HttpServletResponse response = ((ServletWebRequest)RequestContextHolder.getRequestAttributes()).getResponse();
-        System.out.println("addUser");
+    public void addUser(User user,HttpServletResponse response){
         User newUser = user;
         newUser.setPassword(EncodeUtil.toMD5(user.getPassword()));
         int a = userService.add(newUser);
@@ -70,8 +66,7 @@ public class UserController extends BaseController {
     }
 
     @RequestMapping("updateUser")
-    public void updateUser(User user){
-        HttpServletResponse response = ((ServletWebRequest)RequestContextHolder.getRequestAttributes()).getResponse();
+    public void updateUser(User user,HttpServletResponse response){
         User newUser = user;
         newUser.setPassword(EncodeUtil.toMD5(user.getPassword()));
         int a = userService.update(newUser);
