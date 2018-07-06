@@ -1,11 +1,9 @@
 package com.zgc.controller;
 
-import com.sun.deploy.net.HttpRequest;
-import com.sun.deploy.net.HttpResponse;
 import com.zgc.base.controller.BaseController;
 import com.zgc.base.model.Json;
 import com.zgc.model.SysUser;
-import com.zgc.service.ISysUserService;
+import com.zgc.service.ILoginService;
 import com.zgc.util.EncodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,12 +20,12 @@ import javax.servlet.http.HttpSession;
 public class LoginController extends BaseController {
 
     @Autowired
-    ISysUserService sysUserService;
+    ILoginService loginService;
 
     @RequestMapping("login")
     public void  login(String loginName, String password, HttpServletResponse response){
         String encodePwd = EncodeUtil.toMD5(password.trim());
-        SysUser sysUser = sysUserService.login(loginName.trim(),encodePwd);
+        SysUser sysUser = loginService.login(loginName.trim(),encodePwd);
         if (sysUser != null){
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
             HttpSession session = request.getSession();

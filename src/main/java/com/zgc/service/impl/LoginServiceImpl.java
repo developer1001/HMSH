@@ -4,12 +4,12 @@ import com.zgc.base.dao.BaseDao;
 import com.zgc.base.service.impl.BaseServiceImpl;
 import com.zgc.dao.LoginDao;
 import com.zgc.model.SysUser;
-import com.zgc.service.ISysUserService;
+import com.zgc.service.ILoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SysUserServiceImpl extends BaseServiceImpl<SysUser> implements ISysUserService{
+public class LoginServiceImpl extends BaseServiceImpl<SysUser> implements ILoginService {
 
     @Autowired
     LoginDao loginDao;

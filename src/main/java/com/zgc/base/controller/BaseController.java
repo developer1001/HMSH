@@ -35,18 +35,4 @@ public class BaseController {
         }
     }
 
-    public void writeJson2(Object object){
-        HttpServletResponse response = ((ServletWebRequest)RequestContextHolder.getRequestAttributes()).getResponse();
-        String json = JSONObject.toJSONString(object);
-        System.out.print(json);
-        response.setContentType("text/html;charset=UTF-8");
-        try {
-            Writer writer = response.getWriter();
-            writer.write(json);
-            writer.flush();
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

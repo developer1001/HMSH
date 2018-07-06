@@ -3,7 +3,7 @@ package com.zgc.service;
 import com.zgc.base.service.BaseService;
 import com.zgc.model.SysUser;
 
-public interface ISysUserService extends BaseService<SysUser>{
+public interface ILoginService extends BaseService<SysUser>{
     /**
      * 登录验证
      * @param loginName
