@@ -5,7 +5,7 @@ function login() {
     var name = $("#loginName").val();
     var pwd = $("#loginPwd").val();
     $.ajax({
-        url:"../login/login.do",
+        url:"../login.do",
         method:"post",
         dataType:"json",
         data:{
@@ -14,7 +14,7 @@ function login() {
         },
         success:function (data) {
             if (data.success){
-                window.location.href="../login/index.do";
+                window.location.href="../index.do";
             }
             else
                 alert(data.msg);

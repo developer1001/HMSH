@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/login/")
+@RequestMapping("/")
 public class LoginController extends BaseController {
 
     @Autowired

@@ -70,17 +70,17 @@
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
     <!--不拦截静态资源-->
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.js</url-pattern>
-        <url-pattern>*.css</url-pattern>
-        <url-pattern>*.jpg</url-pattern>
-        <url-pattern>*.gif</url-pattern>
-        <url-pattern>*.png</url-pattern>
-        <url-pattern>*.jpeg</url-pattern>
-        <url-pattern>*.html</url-pattern>
-        <url-pattern>*.htm</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>*.js</url-pattern>-->
+        <!--<url-pattern>*.css</url-pattern>-->
+        <!--<url-pattern>*.jpg</url-pattern>-->
+        <!--<url-pattern>*.gif</url-pattern>-->
+        <!--<url-pattern>*.png</url-pattern>-->
+        <!--<url-pattern>*.jpeg</url-pattern>-->
+        <!--<url-pattern>*.html</url-pattern>-->
+        <!--<url-pattern>*.htm</url-pattern>-->
+    <!--</servlet-mapping>-->
     <!-- cxf ，有需要的时候就开启激活-->
     <!--<servlet>-->
         <!--<servlet-name>CXFServlet</servlet-name>-->
