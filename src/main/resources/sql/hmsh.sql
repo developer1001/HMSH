@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-07-07 16:19:16
+Date: 2018-07-07 18:34:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -134,6 +134,7 @@ CREATE TABLE `sys_user` (
   `userName` varchar(40) NOT NULL COMMENT '用户名',
   `loginName` varchar(40) NOT NULL COMMENT '登录名',
   `password` varchar(100) NOT NULL COMMENT '密码',
+  `isActive` int(1) NOT NULL DEFAULT '0' COMMENT '0未激活，1激活状态',
   PRIMARY KEY (`id`),
   UNIQUE KEY `loginName` (`loginName`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
@@ -141,10 +142,10 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', 'admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e');
-INSERT INTO `sys_user` VALUES ('2', 'superadmin', 'superadmin', 'e10adc3949ba59abbe56e057f20f883e');
-INSERT INTO `sys_user` VALUES ('5', '企业1', 'qiye1', 'e10adc3949ba59abbe56e057f20f883e');
-INSERT INTO `sys_user` VALUES ('6', '政府1', 'zhengfu1', 'e10adc3949ba59abbe56e057f20f883e');
+INSERT INTO `sys_user` VALUES ('1', 'admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1');
+INSERT INTO `sys_user` VALUES ('2', 'superadmin', 'superadmin', 'e10adc3949ba59abbe56e057f20f883e', '1');
+INSERT INTO `sys_user` VALUES ('5', '企业1', 'qiye1', 'e10adc3949ba59abbe56e057f20f883e', '1');
+INSERT INTO `sys_user` VALUES ('6', '政府1', 'zhengfu1', 'e10adc3949ba59abbe56e057f20f883e', '1');
 
 -- ----------------------------
 -- Table structure for sys_user_dept
@@ -179,7 +180,7 @@ CREATE TABLE `sys_user_role` (
   KEY `roleId` (`roleId`),
   CONSTRAINT `sys_user_role_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `sys_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `sys_user_role_ibfk_2` FOREIGN KEY (`roleId`) REFERENCES `sys_role` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user_role
@@ -188,6 +189,8 @@ INSERT INTO `sys_user_role` VALUES ('1', '1', '3');
 INSERT INTO `sys_user_role` VALUES ('2', '2', '4');
 INSERT INTO `sys_user_role` VALUES ('3', '5', '1');
 INSERT INTO `sys_user_role` VALUES ('4', '6', '2');
+INSERT INTO `sys_user_role` VALUES ('5', '1', '1');
+INSERT INTO `sys_user_role` VALUES ('6', '1', '2');
 
 -- ----------------------------
 -- Table structure for t_user
