@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+	String path = request.getContextPath();
+	pageContext.setAttribute("path",path);
+%>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -6,15 +10,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <title>欢迎登录</title>
-<link rel="stylesheet" type="text/css" href="../staticResource/css/login/normalize.css" />
-<link rel="stylesheet" type="text/css" href="../staticResource/css/login/demo.css" />
+<link rel="stylesheet" type="text/css" href="${path}/staticResource/css/login/normalize.css" />
+<link rel="stylesheet" type="text/css" href="${path}/staticResource/css/login/demo.css" />
 <!--必要样式-->
-<link rel="stylesheet" type="text/css" href="../staticResource/css/login/component.css" />
+<link rel="stylesheet" type="text/css" href="${path}/staticResource/css/login/component.css" />
 <!--[if IE]>
-    <script src="../staticResource/javascript/login/html5.js"></script>
+    <script src="${path}/staticResource/javascript/login/html5.js"></script>
     <![endif]-->
-<script src="../js/jquery-3.1.1.js"></script>
-<script src="../staticResource/javascript/login/login.js"></script>
+<script src="${path}/js/jquery-3.1.1.js"></script>
+<script src="${path}/staticResource/javascript/login/login.js"></script>
 </head>
 <body>
 		<div class="container demo-1">
@@ -41,10 +45,10 @@
 				</div>
 			</div>
 		</div><!-- /container -->
-		<script src="../staticResource/javascript/login/TweenLite.min.js"></script>
-		<script src="../staticResource/javascript/login/EasePack.min.js"></script>
-		<script src="../staticResource/javascript/login/rAF.js"></script>
-		<script src="../staticResource/javascript/login/demo-1.js"></script>
+		<script src="${path}/staticResource/javascript/login/TweenLite.min.js"></script>
+		<script src="${path}/staticResource/javascript/login/EasePack.min.js"></script>
+		<script src="${path}/staticResource/javascript/login/rAF.js"></script>
+		<script src="${path}/staticResource/javascript/login/demo-1.js"></script>
 		<div style="text-align:center;">
 </div>
 	</body>
