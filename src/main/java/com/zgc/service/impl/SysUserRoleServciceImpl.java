@@ -11,6 +11,8 @@ import com.zgc.service.ISysUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @program: HMSH
  * @description: 用户和角色
@@ -24,6 +26,11 @@ public class SysUserRoleServciceImpl extends BaseServiceImpl<SysUserRole> implem
     @Override
     public BaseDao<SysUserRole> baseDao() {
         return sysUserRoleDao;
+    }
+
+    @Override
+    public List<SysUserRole> getByUserId(int userId) {
+        return sysUserRoleDao.getByUserId(userId);
     }
 }
 

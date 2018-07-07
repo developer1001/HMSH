@@ -11,6 +11,8 @@ import com.zgc.service.ISysRoleAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @program: HMSH
  * @description: 角色与菜单
@@ -21,6 +23,11 @@ import org.springframework.stereotype.Service;
 public class SysRoleAuthServiceImpl extends BaseServiceImpl<SysRoleAuth> implements ISysRoleAuthService {
     @Autowired
     SysRoleAuthDao sysRoleAuthDao;
+
+    @Override
+    public List<SysRoleAuth> getByRoleId(List<Integer> roleIdList) {
+        return sysRoleAuthDao.getByRoleId(roleIdList);
+    }
     @Override
     public BaseDao<SysRoleAuth> baseDao() {
         return sysRoleAuthDao;

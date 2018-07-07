@@ -21,8 +21,14 @@
             resultType="com.zgc.model.SysUserRole">
         select * from sys_user_role where id=#{id}
     </select>
-    <!--&lt;!&ndash; 查询所有的用户 &ndash;&gt;-->
-    <!--<select id="list" resultType="com.mi.beans.User">-->
-    <!--select * from t_user;-->
-    <!--</select>-->
+    <!-- 查询用户下所有角色 -->
+    <select id="getByUserId" parameterType="int" resultMap="list1">
+      select * from sys_user_role where userId = #{userId};
+    </select>
+
+    <resultMap id="list1" type="com.zgc.model.SysUserRole">
+        <id column="id" property="id" />
+        <result column="userId" property="userId" />
+        <result column="roleId" property="roleId" />
+    </resultMap>
 </mapper>

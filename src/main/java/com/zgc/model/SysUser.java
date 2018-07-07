@@ -8,6 +8,7 @@ public class SysUser {
     private String userName;//用户名
     private String loginName;//登录名
     private String password;//密码
+    private Integer isActive;//是否禁用 0禁用，1激活
 
     public Integer getId() {
         return id;
@@ -40,5 +41,12 @@ public class SysUser {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
+    public Integer getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Integer isActive) {
+        this.isActive = isActive;
+    }
 }

@@ -11,6 +11,8 @@ import com.zgc.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @program: HMSH
  * @description: 系统权限，SysAuth
@@ -22,9 +24,15 @@ public class SysAuthServiceImpl extends BaseServiceImpl<SysAuth> implements ISys
 
     @Autowired
     SysAuthDao sysAuthDao;
+
+    @Override
+    public List<SysAuth> getByRoleId(List<Integer> roleIdList) {
+        return sysAuthDao.getByRoleId(roleIdList);
+    }
+
     @Override
     public BaseDao<SysAuth> baseDao() {
         return sysAuthDao;
-    }
 
+    }
 }
