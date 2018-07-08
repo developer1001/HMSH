@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : zs
-Source Server Version : 50717
+Source Server         : localhost
+Source Server Version : 50522
 Source Host           : localhost:3306
 Source Database       : hmsh
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50522
 File Encoding         : 65001
 
-Date: 2018-07-07 18:34:44
+Date: 2018-07-08 23:48:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -105,25 +105,25 @@ CREATE TABLE `sys_role_auth` (
 -- ----------------------------
 -- Records of sys_role_auth
 -- ----------------------------
-INSERT INTO `sys_role_auth` VALUES ('2', '1', '2');
-INSERT INTO `sys_role_auth` VALUES ('3', '1', '8');
-INSERT INTO `sys_role_auth` VALUES ('4', '1', '9');
-INSERT INTO `sys_role_auth` VALUES ('5', '1', '10');
-INSERT INTO `sys_role_auth` VALUES ('6', '1', '11');
-INSERT INTO `sys_role_auth` VALUES ('7', '2', '8');
-INSERT INTO `sys_role_auth` VALUES ('8', '2', '9');
-INSERT INTO `sys_role_auth` VALUES ('9', '2', '10');
-INSERT INTO `sys_role_auth` VALUES ('10', '2', '2');
-INSERT INTO `sys_role_auth` VALUES ('11', '2', '11');
-INSERT INTO `sys_role_auth` VALUES ('12', '2', '12');
-INSERT INTO `sys_role_auth` VALUES ('13', '2', '13');
-INSERT INTO `sys_role_auth` VALUES ('14', '2', '14');
-INSERT INTO `sys_role_auth` VALUES ('15', '2', '15');
-INSERT INTO `sys_role_auth` VALUES ('16', '2', '16');
-INSERT INTO `sys_role_auth` VALUES ('17', '2', '17');
-INSERT INTO `sys_role_auth` VALUES ('18', '2', '18');
-INSERT INTO `sys_role_auth` VALUES ('19', '3', '14');
-INSERT INTO `sys_role_auth` VALUES ('20', '4', '8');
+INSERT INTO `sys_role_auth` VALUES ('2', '3', '2');
+INSERT INTO `sys_role_auth` VALUES ('3', '3', '8');
+INSERT INTO `sys_role_auth` VALUES ('4', '3', '9');
+INSERT INTO `sys_role_auth` VALUES ('5', '3', '10');
+INSERT INTO `sys_role_auth` VALUES ('6', '3', '11');
+INSERT INTO `sys_role_auth` VALUES ('7', '4', '8');
+INSERT INTO `sys_role_auth` VALUES ('8', '4', '9');
+INSERT INTO `sys_role_auth` VALUES ('9', '4', '10');
+INSERT INTO `sys_role_auth` VALUES ('10', '4', '2');
+INSERT INTO `sys_role_auth` VALUES ('11', '4', '11');
+INSERT INTO `sys_role_auth` VALUES ('12', '4', '12');
+INSERT INTO `sys_role_auth` VALUES ('13', '4', '13');
+INSERT INTO `sys_role_auth` VALUES ('14', '4', '14');
+INSERT INTO `sys_role_auth` VALUES ('15', '4', '15');
+INSERT INTO `sys_role_auth` VALUES ('16', '4', '16');
+INSERT INTO `sys_role_auth` VALUES ('17', '4', '17');
+INSERT INTO `sys_role_auth` VALUES ('18', '4', '18');
+INSERT INTO `sys_role_auth` VALUES ('19', '1', '14');
+INSERT INTO `sys_role_auth` VALUES ('20', '2', '8');
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -136,14 +136,15 @@ CREATE TABLE `sys_user` (
   `password` varchar(100) NOT NULL COMMENT '密码',
   `isActive` int(1) NOT NULL DEFAULT '0' COMMENT '0未激活，1激活状态',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `loginName` (`loginName`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `loginName` (`loginName`) USING BTREE,
+  UNIQUE KEY `UQ_loginUser` (`loginName`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', 'admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1');
-INSERT INTO `sys_user` VALUES ('2', 'superadmin', 'superadmin', 'e10adc3949ba59abbe56e057f20f883e', '1');
+INSERT INTO `sys_user` VALUES ('1', '管理员', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1');
+INSERT INTO `sys_user` VALUES ('2', '超级管理员', 'superadmin', 'e10adc3949ba59abbe56e057f20f883e', '1');
 INSERT INTO `sys_user` VALUES ('5', '企业1', 'qiye1', 'e10adc3949ba59abbe56e057f20f883e', '1');
 INSERT INTO `sys_user` VALUES ('6', '政府1', 'zhengfu1', 'e10adc3949ba59abbe56e057f20f883e', '1');
 
