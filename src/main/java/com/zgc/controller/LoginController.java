@@ -39,17 +39,18 @@ public class LoginController extends BaseController {
     ISysAuthService sysAuthService;
 
     @RequestMapping("login")
-    public void  login(String loginName, String password, HttpServletResponse response){
+    public void  login(String loginName, String password, HttpServletResponse response)throws Exception{
         String encodePwd = EncodeUtil.toMD5(password.trim());
         SysUser sysUser = loginService.login(loginName.trim(),encodePwd);
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         if (sysUser != null && sysUser.getIsActive() == 1){
-            HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
             HttpSession session = request.getSession();
             if (session.getAttribute("loginUser") != null)
                 session.removeAttribute("loginUser");
             session.setAttribute("loginUser",sysUser);
-            List<SysAuth> sysAuths = getUserAuth(sysUser.getId());
-            Json json = new Json(true,sysAuths);
+           // List<SysAuth> sysAuths = getUserAuth(sysUser.getId());
+            Json json = new Json(true,sysUser);
+            request.getRequestDispatcher("/view/main.jsp").forward(request,response);
             writeJson(json,response);
         }
         else{
@@ -63,9 +64,12 @@ public class LoginController extends BaseController {
      *1）：根据userId获得对应的一个或多个角色的 roleId;
      *2）：根据roleId获取对应的权限authId；这个过程要去重复的anthId。
      *3）：根据authId获取对应的多个权限菜单对象，即SysAuth
-     * @param userid
      */
-    public List<SysAuth> getUserAuth(int userid){
+    @RequestMapping("getAuth")
+    public void getUserAuth(HttpServletResponse response){
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        HttpSession session = request.getSession();
+        int userid = ((SysUser)session.getAttribute("loginUser")).getId();
         //根据用户查多个角色
         List<SysUserRole> list  = sysUserRoleService.getByUserId(userid);
         List<Integer> roleIdList = new ArrayList<>();
@@ -80,13 +84,14 @@ public class LoginController extends BaseController {
         }
 
         //根据authId集合查询所有的权限项
-        List<SysAuth> sysAuths = sysAuthService.getByRoleId(roleIdList);
-        return  sysAuths;
+        List<SysAuth> sysAuths = sysAuthService.getByRoleId(new ArrayList<Integer>(authIdList));
+        writeJson(new Json(true,sysAuths.size(),sysAuths),response);
     }
 
     @RequestMapping("index")
-    public String loginIndex(){
-        return "main";
+    public void loginIndex(HttpServletResponse response)throws Exception{
+        response.sendRedirect("");
+//        return "main";
     }
 
     @RequestMapping("logout")

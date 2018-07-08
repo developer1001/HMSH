@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class MvcSessionInterceptor implements HandlerInterceptor {
-    private static final String LOGIN_URL="/view/login.jsp";
+    private static final String LOGIN_URL="/";
     @Override
     public void postHandle(HttpServletRequest request,
                            HttpServletResponse response, Object handler,

@@ -18,7 +18,6 @@
     <script src="${path}/staticResource/javascript/login/html5.js"></script>
     <![endif]-->
 <script src="${path}/js/jquery-3.1.1.js"></script>
-<script src="${path}/staticResource/javascript/login/login.js"></script>
 </head>
 <body>
 		<div class="container demo-1">
@@ -27,7 +26,7 @@
 					<canvas id="demo-canvas"></canvas>
 					<div class="logo_box">
 						<h3>欢迎你</h3>
-						<form action="#" name="f" method="post">
+						<form action="login.do" name="f" method="post">
 							<div class="input_outer">
 								<span class="u_user"></span>
 								<input name="logname" id="loginName" class="text"
@@ -38,8 +37,8 @@
 								<input name="logpass" id="loginPwd" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value=""
 									   type="password" placeholder="请输入密码">
 							</div>
-							<div class="mb2"><a class="act-but submit" href="javascript:;void(0)"
-									onclick="login()"	style="color: #FFFFFF">登录</a></div>
+							<div class="mb2"><a class="act-but submit" id="loginBtn" href="javascript:;void(0)"
+									onclick="document.getElementByName('f').submit()"	style="color: #FFFFFF">登录</a></div>
 						</form>
 					</div>
 				</div>
@@ -49,6 +48,7 @@
 		<script src="${path}/staticResource/javascript/login/EasePack.min.js"></script>
 		<script src="${path}/staticResource/javascript/login/rAF.js"></script>
 		<script src="${path}/staticResource/javascript/login/demo-1.js"></script>
+		<script src="${path}/staticResource/javascript/login/login.js"></script>
 		<div style="text-align:center;">
 </div>
 	</body>

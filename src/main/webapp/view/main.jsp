@@ -10,11 +10,17 @@
     String path = request.getContextPath();
     pageContext.setAttribute("path",path);
 %>
+<%
+    response.setHeader("Pragma","No-cache");
+    response.setHeader("Cache-Control","No-cache");
+    response.setDateHeader("Expires", -1);
+    response.setHeader("Cache-Control", "No-store");
+%>
 <!DOCTYPE html>
 <html>
 <head>
     <title>LeaRun敏捷开发框架</title>
-    <link rel="stylesheet" href="${path}/staticResource/bootstrap-4.0.0/css/bootstrap.css">
+    <link rel="stylesheet" href="${path}/staticResource/javascript/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="${path}/staticResource/css/font-awesome.min.css">
     <link rel="stylesheet" href="${path}/staticResource/css/main.css">
     <link rel="stylesheet" href="${path}/staticResource/css/skins/_all-skins.css">
@@ -136,7 +142,8 @@
     </div>
 </div>
 <script src="${path}/js/jQuery-2.2.0.min.js"></script>
-<script src="${path}/staticResource/bootstrap-4.0.0/js/bootstrap.js"></script>
+<script src="${path}/staticResource/javascript/bootstrap/js/bootstrap.min.js"></script>
 <script src="${path}/staticResource/javascript/main.js"></script>
+<script src="${path}/staticResource/javascript/main2.js"></script>
 </body>
 </html>
