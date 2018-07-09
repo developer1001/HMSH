@@ -48,9 +48,9 @@ public class LoginController extends BaseController {
             if (session.getAttribute("loginUser") != null)
                 session.removeAttribute("loginUser");
             session.setAttribute("loginUser",sysUser);
-           // List<SysAuth> sysAuths = getUserAuth(sysUser.getId());
-            Json json = new Json(true,sysUser);
-            request.getRequestDispatcher("/view/main.jsp").forward(request,response);
+            List<SysAuth> sysAuths = getUserAuth(sysUser.getId());
+            Json json = new Json(true,sysAuths);
+//            request.getRequestDispatcher("/view/main.jsp").forward(request,response);
             writeJson(json,response);
         }
         else{
@@ -66,12 +66,12 @@ public class LoginController extends BaseController {
      *3）：根据authId获取对应的多个权限菜单对象，即SysAuth
      */
     @RequestMapping("getAuth")
-    public void getUserAuth(HttpServletResponse response){
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        HttpSession session = request.getSession();
-        int userid = ((SysUser)session.getAttribute("loginUser")).getId();
+    public List<SysAuth> getUserAuth(int userId){
+//        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+//        HttpSession session = request.getSession();
+//        int userid = ((SysUser)session.getAttribute("loginUser")).getId();
         //根据用户查多个角色
-        List<SysUserRole> list  = sysUserRoleService.getByUserId(userid);
+        List<SysUserRole> list  = sysUserRoleService.getByUserId(userId);
         List<Integer> roleIdList = new ArrayList<>();
         for (SysUserRole item:list){
             roleIdList.add(item.getRoleId());
@@ -85,7 +85,8 @@ public class LoginController extends BaseController {
 
         //根据authId集合查询所有的权限项
         List<SysAuth> sysAuths = sysAuthService.getByRoleId(new ArrayList<Integer>(authIdList));
-        writeJson(new Json(true,sysAuths.size(),sysAuths),response);
+//        writeJson(new Json(true,sysAuths.size(),sysAuths),response);
+        return sysAuths;
     }
 
     @RequestMapping("index")
