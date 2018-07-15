@@ -10,16 +10,10 @@
     String path = request.getContextPath();
     pageContext.setAttribute("path",path);
 %>
-<%
-    response.setHeader("Pragma","No-cache");
-    response.setHeader("Cache-Control","No-cache");
-    response.setDateHeader("Expires", -1);
-    response.setHeader("Cache-Control", "No-store");
-%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LeaRun敏捷开发框架</title>
+    <title>管理台</title>
     <link rel="stylesheet" href="${path}/staticResource/javascript/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="${path}/staticResource/css/font-awesome.min.css">
     <link rel="stylesheet" href="${path}/staticResource/css/main.css">
@@ -32,9 +26,9 @@
 <div class="wrapper">
     <!--头部信息-->
     <header class="main-header">
-        <a href="http://www.learun.cn/adms/index.html" target="_blank" class="logo">
+        <a href="https://music.163.com/" target="_blank" class="logo">
             <span class="logo-mini">LR</span>
-            <span class="logo-lg">learun<strong>敏捷框架</strong></span>
+            <span class="logo-lg">music.163.com</span>
         </a>
         <nav class="navbar navbar-static-top">
             <a class="sidebar-toggle">

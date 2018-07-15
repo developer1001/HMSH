@@ -14,12 +14,18 @@ function getAuth() {
         },
         success:function (data) {
             if (data.success){
-                var loginUser = JSON.parse(localStorage.getItem("loginUser"));
-                $(".hidden-xs").html(loginUser.userName);
-                $(".user-panel").children("div:eq(1)").children("p:eq(0)").html(loginUser.userName);
+                // console.log(data.data);
+                console.log(${loginUser});
+                // var loginUser = JSON.parse(localStorage.getItem("loginUser"));
+                // $(".hidden-xs").html(${loginUser.userName});
+                // $(".user-panel").children("div:eq(1)").children("p:eq(0)").html(${loginUser.userName});
             }
             else
                 alert("菜单信息获取失败，请重新登录");
+        },
+        error:function (ex) {
+            window.top.parent.location.href = "view/login.jsp";
         }
+
     })
 }

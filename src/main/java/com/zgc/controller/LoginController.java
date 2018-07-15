@@ -16,14 +16,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 @RequestMapping("/")
@@ -39,7 +37,9 @@ public class LoginController extends BaseController {
     ISysAuthService sysAuthService;
 
     @RequestMapping("login")
-    public void  login(String loginName, String password, HttpServletResponse response)throws Exception{
+    public ModelAndView login(String loginName, String password, HttpServletResponse response)throws Exception{
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("main");
         String encodePwd = EncodeUtil.toMD5(password.trim());
         SysUser sysUser = loginService.login(loginName.trim(),encodePwd);
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -48,15 +48,20 @@ public class LoginController extends BaseController {
             if (session.getAttribute("loginUser") != null)
                 session.removeAttribute("loginUser");
             session.setAttribute("loginUser",sysUser);
-           // List<SysAuth> sysAuths = getUserAuth(sysUser.getId());
-            Json json = new Json(true,sysUser);
-            request.getRequestDispatcher("/view/main.jsp").forward(request,response);
-            writeJson(json,response);
+//            List<SysAuth> sysAuths = getUserAuth(sysUser.getId());
+//            Json json = new Json(true,sysUser);
+//            request.getRequestDispatcher("/view/main.jsp").forward(request,response);
+//            writeJson(json,response);
+            Map<String,Object> map = new HashMap<>();
+            map.put("loginUser",sysUser);
+            modelAndView.addObject("loginUser",map);
+            return modelAndView;
         }
         else{
             Json json = new Json(false,"用户信息错误，请重试");
             writeJson(json,response);
         }
+        return null;
     }
 
     /**
@@ -90,7 +95,7 @@ public class LoginController extends BaseController {
 
     @RequestMapping("index")
     public void loginIndex(HttpServletResponse response)throws Exception{
-        response.sendRedirect("");
+//        response.sendRedirect("");
 //        return "main";
     }
 
