@@ -1,6 +1,6 @@
 $(function () {
    getAuth();
-   storeUserInfo();
+   //storeUserInfo();
 })
 
 /**

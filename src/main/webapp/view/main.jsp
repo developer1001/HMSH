@@ -28,9 +28,9 @@
 <div class="wrapper">
     <!--头部信息-->
     <header class="main-header">
-        <a href="https://music.163.com/" target="_blank" class="logo">
+        <a href="" target="_blank" class="logo">
             <span class="logo-mini">LR</span>
-            <span class="logo-lg">music.163.com</span>
+            <span class="logo-lg">System Contrl Center</span>
         </a>
         <nav class="navbar navbar-static-top">
             <a class="sidebar-toggle">

@@ -27,7 +27,7 @@ function login() {
                 loginUser.loginName = data.data.loginName;
                 loginUser.userName = data.data.userName;
                 localStorage.setItem("loginUser",JSON.stringify(loginUser));
-                // window.location.href="index.do";
+                window.location.href="../index.do";
             }
             else
                 alert(data.msg);

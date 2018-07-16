@@ -50,7 +50,7 @@ public class LoginController extends BaseController {
             session.setAttribute("loginUser",sysUser);
 //            List<SysAuth> sysAuths = getUserAuth(sysUser.getId());
             Json json = new Json(true,sysUser);
-            request.getRequestDispatcher("/view/main.jsp").forward(request,response);
+//            request.getRequestDispatcher("/view/main.jsp").forward(request,response);
             writeJson(json,response);
 //            Map<String,Object> map = new HashMap<>();
 //            map.put("loginUser",sysUser);
@@ -94,9 +94,8 @@ public class LoginController extends BaseController {
     }
 
     @RequestMapping("index")
-    public void loginIndex(HttpServletResponse response)throws Exception{
-//        response.sendRedirect("");
-//        return "main";
+    public String loginIndex(HttpServletResponse response)throws Exception{
+        return "main";
     }
 
     @RequestMapping("logout")
