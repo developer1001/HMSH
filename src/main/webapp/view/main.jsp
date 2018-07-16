@@ -30,7 +30,7 @@
     <header class="main-header">
         <a href="" target="_blank" class="logo">
             <span class="logo-mini">LR</span>
-            <span class="logo-lg">System Contrl Center</span>
+            <span class="logo-lg">System Control Center</span>
         </a>
         <nav class="navbar navbar-static-top">
             <a class="sidebar-toggle">

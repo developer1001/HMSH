@@ -1,7 +1,11 @@
 package com.zgc.base.service;
 
+import java.util.List;
+
 public interface BaseService<T> {
     T findById(int id);
+
+    List<T> findAllObj();
 
     int add(T t);
 
