@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
     String path = request.getContextPath();
     pageContext.setAttribute("path",path);
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="${path}/staticResource/css/font-awesome.min.css">
     <link rel="stylesheet" href="${path}/staticResource/css/main.css">
     <link rel="stylesheet" href="${path}/staticResource/css/skins/_all-skins.css">
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini" style="overflow:hidden;">
 <div id="ajax-loader" style="cursor: progress; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background: #fff; z-index: 10000; overflow: hidden;">
@@ -57,7 +59,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="${path}/staticResource/img/main/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">administrator</span>
+                            <span class="hidden-xs">${loginUser.userName}</span>
                         </a>
                         <ul class="dropdown-menu pull-right">
                             <li><a class="menuItem" data-id="userInfo" href="/SystemManage/User/Info"><i class="fa fa-user"></i>个人信息</a></li>
@@ -79,7 +81,7 @@
                     <img src="${path}/staticResource/img/main/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>administrator</p>
+                    <p>${loginUser.userName}</p>
                     <a><i class="fa fa-circle text-success"></i>在线</a>
                 </div>
             </div>

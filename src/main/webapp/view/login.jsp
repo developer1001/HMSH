@@ -38,7 +38,7 @@
 									   type="password" placeholder="请输入密码">
 							</div>
 							<div class="mb2"><a class="act-but submit" id="loginBtn" href="javascript:;void(0)"
-									onclick="document.forms[0].submit()"	style="color: #FFFFFF">登录</a></div>
+									onclick="login()"	style="color: #FFFFFF">登录</a></div>
 						</form>
 					</div>
 				</div>

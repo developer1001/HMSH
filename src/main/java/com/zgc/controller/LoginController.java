@@ -37,9 +37,9 @@ public class LoginController extends BaseController {
     ISysAuthService sysAuthService;
 
     @RequestMapping("login")
-    public ModelAndView login(String loginName, String password, HttpServletResponse response)throws Exception{
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("main");
+    public void login(String loginName, String password, HttpServletResponse response)throws Exception{
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("main");
         String encodePwd = EncodeUtil.toMD5(password.trim());
         SysUser sysUser = loginService.login(loginName.trim(),encodePwd);
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -49,19 +49,19 @@ public class LoginController extends BaseController {
                 session.removeAttribute("loginUser");
             session.setAttribute("loginUser",sysUser);
 //            List<SysAuth> sysAuths = getUserAuth(sysUser.getId());
-//            Json json = new Json(true,sysUser);
-//            request.getRequestDispatcher("/view/main.jsp").forward(request,response);
-//            writeJson(json,response);
-            Map<String,Object> map = new HashMap<>();
-            map.put("loginUser",sysUser);
-            modelAndView.addObject("loginUser",map);
-            return modelAndView;
+            Json json = new Json(true,sysUser);
+            request.getRequestDispatcher("/view/main.jsp").forward(request,response);
+            writeJson(json,response);
+//            Map<String,Object> map = new HashMap<>();
+//            map.put("loginUser",sysUser);
+//            modelAndView.addObject("loginUser",sysUser);
+//            return modelAndView;
         }
         else{
             Json json = new Json(false,"用户信息错误，请重试");
             writeJson(json,response);
         }
-        return null;
+//        return null;
     }
 
     /**
