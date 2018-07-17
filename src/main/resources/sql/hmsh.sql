@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50522
+Source Server         : zs
+Source Server Version : 50717
 Source Host           : localhost:3306
 Source Database       : hmsh
 
 Target Server Type    : MYSQL
-Target Server Version : 50522
+Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-07-08 23:48:21
+Date: 2018-07-17 13:32:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -66,6 +66,54 @@ INSERT INTO `sys_dept` VALUES ('4', '公安部', 'ga1fe54g', null);
 INSERT INTO `sys_dept` VALUES ('5', '北京市公安局', '456ewg6we5', '4');
 INSERT INTO `sys_dept` VALUES ('6', '北京市公安局海淀分局', '546q1g6reg', '5');
 INSERT INTO `sys_dept` VALUES ('7', '北京市公安局朝阳分局', '46erg51845y64sa', '5');
+
+-- ----------------------------
+-- Table structure for sys_menu
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_menu`;
+CREATE TABLE `sys_menu` (
+  `F_ModuleId` varchar(100) NOT NULL,
+  `F_ParentId` varchar(100) DEFAULT NULL,
+  `F_EnCode` varchar(100) DEFAULT NULL,
+  `F_FullName` varchar(100) DEFAULT NULL,
+  `F_Icon` varchar(100) DEFAULT NULL,
+  `F_UrlAddress` varchar(100) DEFAULT NULL,
+  `F_Target` varchar(100) DEFAULT NULL,
+  `F_IsMenu` int(10) DEFAULT NULL,
+  `F_AllowExpand` int(10) DEFAULT NULL,
+  `F_IsPublic` int(10) DEFAULT NULL,
+  `F_AllowEdit` varchar(100) DEFAULT NULL,
+  `F_AllowDelete` varchar(100) DEFAULT NULL,
+  `F_SortCode` int(10) DEFAULT NULL,
+  `F_DeleteMark` int(10) DEFAULT NULL,
+  `F_EnabledMark` int(10) DEFAULT NULL,
+  `F_Description` varchar(100) DEFAULT NULL,
+  `F_CreateDate` datetime DEFAULT NULL,
+  `F_CreateUserId` varchar(100) DEFAULT NULL,
+  `F_CreateUserName` varchar(100) DEFAULT NULL,
+  `F_ModifyDate` datetime DEFAULT NULL,
+  `F_ModifyUserId` varchar(100) DEFAULT NULL,
+  `F_ModifyUserName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`F_ModuleId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_menu
+-- ----------------------------
+INSERT INTO `sys_menu` VALUES ('1', '0', null, '系统管理', 'fa fa-desktop', '', 'expand', '0', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('1b642904-d674-495f-a1e1-4814cc543870', '5', null, '发起流程', 'fa fa-edit', '/FlowManage/FlowLaunch/Index', 'iframe', '1', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('1d3797f6-5cd2-41bc-b769-27f2513d61a9', 'ad147f6d-613f-4d2d-8c84-b749d0754f3b', null, '客户管理', 'fa fa-suitcase', '/CustomerManage/Customer/Index', 'iframe', '1', '0', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('2', '0', null, '单位组织', 'fa fa-coffee', '', 'expand', '0', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('4', '0', null, '公共信息', 'fa fa-globe', null, 'expand', '0', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('5', '0', null, '工作流程', 'fa fa-share-alt', null, 'expand', '0', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('6', '0', null, '报表中心', 'fa fa-area-chart', null, 'expand', '0', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('7ae94059-9aa5-48eb-8330-4e2a6565b193', '1', null, '行政区域', 'fa fa-leaf', '/SystemManage/Area/Index', 'iframe', '1', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('8', '2', null, '机构管理', 'fa fa-sitemap', '/BaseManage/Organize/Index', 'iframe', '1', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('92a535c9-4d4b-4500-968d-a142e671c09b', '6', null, '报表管理', 'fa fa-cogs', '/ReportManage/Report/Index', 'iframe', '1', '0', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('a977d91e-77b7-4d60-a7ad-dfbc138f7c0a', 'b9f9df92-8ac5-46e2-90ac-68c5c2e034c3', null, '企业号设置', 'fa fa-plug', '/WeChatManage/Token/Index', 'iframe', '1', '0', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('ad147f6d-613f-4d2d-8c84-b749d0754f3b', '0', null, '客户关系', 'fa fa-briefcase', null, 'expand', '0', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('b9f9df92-8ac5-46e2-90ac-68c5c2e034c3', '1', null, '微信管理', 'fa fa-weixin', null, 'expand', '0', '0', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('e35d24ce-8a6a-46b9-8b3f-6dc864a8f342', '4', null, '新闻中心', 'fa fa-feed', '/PublicInfoManage/News/Index', 'iframe', '1', '1', null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -138,7 +186,7 @@ CREATE TABLE `sys_user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `loginName` (`loginName`) USING BTREE,
   UNIQUE KEY `UQ_loginUser` (`loginName`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_user
