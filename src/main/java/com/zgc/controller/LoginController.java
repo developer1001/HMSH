@@ -2,14 +2,8 @@ package com.zgc.controller;
 
 import com.zgc.base.controller.BaseController;
 import com.zgc.base.model.Json;
-import com.zgc.model.SysAuth;
-import com.zgc.model.SysRoleAuth;
-import com.zgc.model.SysUser;
-import com.zgc.model.SysUserRole;
-import com.zgc.service.ILoginService;
-import com.zgc.service.ISysAuthService;
-import com.zgc.service.ISysRoleAuthService;
-import com.zgc.service.ISysUserRoleService;
+import com.zgc.model.*;
+import com.zgc.service.*;
 import com.zgc.util.EncodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +29,8 @@ public class LoginController extends BaseController {
     ISysRoleAuthService sysRoleAuthService;
     @Autowired
     ISysAuthService sysAuthService;
+    @Autowired
+    ITreeMenuService treeMenuService;
 
     @RequestMapping("login")
     public void login(String loginName, String password, HttpServletResponse response)throws Exception{
@@ -91,6 +87,15 @@ public class LoginController extends BaseController {
         //根据authId集合查询所有的权限项
         List<SysAuth> sysAuths = sysAuthService.getByRoleId(new ArrayList<Integer>(authIdList));
         writeJson(new Json(true,sysAuths.size(),sysAuths),response);
+    }
+
+    /**
+     * 获得菜单树，菜单树是前端自动处理的，后端并没有进行树节点的处理。此菜单树为测试所用，不推荐直接应用
+     */
+    @RequestMapping("getTreeMenu")
+    public void getTreeMenu(HttpServletResponse response){
+        List<TreeMenu> treeMenus = treeMenuService.findAllObj();
+        writeJson(new Json(true,treeMenus),response);
     }
 
     @RequestMapping("index")

@@ -1,5 +1,5 @@
 $(function () {
-   getAuth();
+   // getAuth();
    //storeUserInfo();
 })
 
@@ -8,7 +8,8 @@ $(function () {
  */
 function getAuth() {
     $.ajax({
-        url:"getAuth.do",
+        // url:"getAuth.do",
+        url:"getTreeMenu.do",
         method:"post",
         dataType:"json",
         data:{
@@ -35,11 +36,11 @@ function getAuth() {
 /***
  * 存储登录用户信息
  */
-function storeUserInfo() {
-    var loginUser = {};
-    loginUser.Id = '${loginUser.id}';
-    loginUser.loginName = '${loginUser.loginName}';
-    loginUser.userName = '${loginUser.userName}';
-    localStorage.setItem("loginUser",JSON.stringify(loginUser));
-
-}
+// function storeUserInfo() {
+//     var loginUser = {};
+//     loginUser.Id = '${loginUser.id}';
+//     loginUser.loginName = '${loginUser.loginName}';
+//     loginUser.userName = '${loginUser.userName}';
+//     localStorage.setItem("loginUser",JSON.stringify(loginUser));
+//
+// }
