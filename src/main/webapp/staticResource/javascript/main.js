@@ -311,8 +311,7 @@
                 success:function (result) {
                     if (result.success){
                        data = result.data;
-                       console.log(data);
-
+                        treeMenu(data);
                     }
                     else
                         alert("菜单信息获取失败，请重新登录");
@@ -322,9 +321,10 @@
                 }
 
             })
-
+        function treeMenu(data) {
             var _html = "";
             $.each(data, function (i) {
+                console.log(data);
                 var row = data[i];
                 if (row.F_ParentId == "0") {
                     if (i == 0) {
@@ -392,6 +392,7 @@
                 }
                 e.is(".treeview-menu");
             });
+        }
         }
     };
     $(function () {
