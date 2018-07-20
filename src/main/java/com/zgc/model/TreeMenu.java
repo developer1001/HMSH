@@ -1,5 +1,7 @@
 package com.zgc.model;
 
+import java.sql.Timestamp;
+
 /**
  * @program: HMSH
  * @description: 树形菜单。没有提供界面的菜单修改操作，若需修改，需要到数据库手动修改
@@ -9,12 +11,27 @@ package com.zgc.model;
 public class TreeMenu {
     private String F_ModuleId;
     private String F_ParentId;
+    private String F_EnCode;
     private String F_FullName;
     private String F_Icon;
     private String F_UrlAddress;
     private String F_Target;
     private Integer F_IsMenu;
     private Integer F_AllowExpand;
+    private Integer F_IsPublic;
+    private String F_AllowEdit;
+    private String F_AllowDelete;
+    private Integer F_SortCode;
+    private Integer F_DeleteMark;
+    private Integer F_EnabledMark;
+    private String F_Description;
+    private Timestamp F_CreateDate;
+    private String F_CreateUserId;
+    private String F_CreateUserName;
+    private Timestamp F_ModifyDate;
+    private String F_ModifyUserId;
+    private String F_ModifyUserName;
+
 
     public String getF_ModuleId() {
         return F_ModuleId;
@@ -78,5 +95,117 @@ public class TreeMenu {
 
     public void setF_AllowExpand(Integer f_AllowExpand) {
         F_AllowExpand = f_AllowExpand;
+    }
+
+    public String getF_EnCode() {
+        return F_EnCode;
+    }
+
+    public void setF_EnCode(String f_EnCode) {
+        F_EnCode = f_EnCode;
+    }
+
+    public Integer getF_IsPublic() {
+        return F_IsPublic;
+    }
+
+    public void setF_IsPublic(Integer f_IsPublic) {
+        F_IsPublic = f_IsPublic;
+    }
+
+    public String getF_AllowEdit() {
+        return F_AllowEdit;
+    }
+
+    public void setF_AllowEdit(String f_AllowEdit) {
+        F_AllowEdit = f_AllowEdit;
+    }
+
+    public String getF_AllowDelete() {
+        return F_AllowDelete;
+    }
+
+    public void setF_AllowDelete(String f_AllowDelete) {
+        F_AllowDelete = f_AllowDelete;
+    }
+
+    public Integer getF_SortCode() {
+        return F_SortCode;
+    }
+
+    public void setF_SortCode(Integer f_SortCode) {
+        F_SortCode = f_SortCode;
+    }
+
+    public Integer getF_DeleteMark() {
+        return F_DeleteMark;
+    }
+
+    public void setF_DeleteMark(Integer f_DeleteMark) {
+        F_DeleteMark = f_DeleteMark;
+    }
+
+    public Integer getF_EnabledMark() {
+        return F_EnabledMark;
+    }
+
+    public void setF_EnabledMark(Integer f_EnabledMark) {
+        F_EnabledMark = f_EnabledMark;
+    }
+
+    public String getF_Description() {
+        return F_Description;
+    }
+
+    public void setF_Description(String f_Description) {
+        F_Description = f_Description;
+    }
+
+    public Timestamp getF_CreateDate() {
+        return F_CreateDate;
+    }
+
+    public void setF_CreateDate(Timestamp f_CreateDate) {
+        F_CreateDate = f_CreateDate;
+    }
+
+    public String getF_CreateUserId() {
+        return F_CreateUserId;
+    }
+
+    public void setF_CreateUserId(String f_CreateUserId) {
+        F_CreateUserId = f_CreateUserId;
+    }
+
+    public String getF_CreateUserName() {
+        return F_CreateUserName;
+    }
+
+    public void setF_CreateUserName(String f_CreateUserName) {
+        F_CreateUserName = f_CreateUserName;
+    }
+
+    public Timestamp getF_ModifyDate() {
+        return F_ModifyDate;
+    }
+
+    public void setF_ModifyDate(Timestamp f_ModifyDate) {
+        F_ModifyDate = f_ModifyDate;
+    }
+
+    public String getF_ModifyUserId() {
+        return F_ModifyUserId;
+    }
+
+    public void setF_ModifyUserId(String f_ModifyUserId) {
+        F_ModifyUserId = f_ModifyUserId;
+    }
+
+    public String getF_ModifyUserName() {
+        return F_ModifyUserName;
+    }
+
+    public void setF_ModifyUserName(String f_ModifyUserName) {
+        F_ModifyUserName = f_ModifyUserName;
     }
 }
