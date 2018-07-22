@@ -309,8 +309,7 @@
                 },
                 success:function (result) {
                     if (result.success){
-                        data = result.data;
-                       console.log(data);
+                       var data = result.data;
                         treeMenu(data);
                     }
                     else
