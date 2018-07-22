@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.dufy</groupId>
-    <artifactId>ssm</artifactId>
+    <artifactId>hmsh</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>projectM</name>
+    <name>HMSH</name>
     <url>http://maven.apache.org</url>
     <properties>
         <spring.version>4.0.5.RELEASE</spring.version>

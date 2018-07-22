@@ -103,7 +103,7 @@ public class LoginController extends BaseController {
         return "main";
     }
 
-    @RequestMapping("logout")
+    @RequestMapping("logout/logout")
     public String logout(){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         HttpSession session = request.getSession();
