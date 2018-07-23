@@ -374,7 +374,7 @@
         $.learunindex.load();
         $.ajax({
             // url:"getAuth.do",
-            asyn:false,
+            async:false,
             url:"getTreeMenu.do",
             method:"post",
             dataType:"json",

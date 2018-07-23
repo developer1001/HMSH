@@ -37,6 +37,10 @@
 								<input name="password" id="loginPwd" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value=""
 									   type="password" placeholder="请输入密码">
 							</div>
+							<div class="" >
+								<input name="remember" id="remember" type="checkbox">&nbsp;记住密码
+									<a href="" style="float: right;color: #FFFFFF">忘记密码？</a>
+							</div>
 							<div class="mb2"><a class="act-but submit" id="loginBtn" href="javascript:;void(0)"
 									onclick="login()"	style="color: #FFFFFF">登录</a></div>
 						</form>
