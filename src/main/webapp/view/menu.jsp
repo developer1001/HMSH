@@ -14,10 +14,10 @@
 %>
 <html>
 <head>
-    <link rel="stylesheet" href="${path}/staticResource/zTree_v3/css/demo.css/>" type="text/css"></link>
-    <link rel="stylesheet" href="${path}/staticResource/zTree_v3/css/zTreeStyle/zTreeStyle.css/>" type="text/css"></link>
-    <script type="text/javascript" src="${path}/staticResource/zTree_v3/js/jquery-1.4.4.min.js/>"></script>
-    <script type="text/javascript" src="${path}/staticResource/zTree_v3/js/jquery.ztree.core-3.5.js/>"></script>
+    <link rel="stylesheet" href="${path}/staticResource/zTree_v3/css/demo.css" type="text/css"></link>
+    <link rel="stylesheet" href="${path}/staticResource/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css"></link>
+    <script type="text/javascript" src="${path}/staticResource/zTree_v3/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="${path}/staticResource/zTree_v3/js/jquery.ztree.core.js"></script>
     <SCRIPT type="text/javascript">
         <!--
         var setting = {
