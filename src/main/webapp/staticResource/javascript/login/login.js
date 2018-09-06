@@ -4,6 +4,8 @@ $(function () {
             $('#loginBtn').click();
         }
     });
+
+    getCookie();
 })
 
 /**
@@ -12,6 +14,7 @@ $(function () {
 function login() {
     var name = $("#loginName").val();
     var pwd = $("#loginPwd").val();
+    var remember = $("input[type='checkbox']").is(':checked');
     $.ajax({
         url:"../login.do",
         method:"post",
@@ -19,6 +22,7 @@ function login() {
         data:{
             loginName:name,
             password:pwd,
+            remember:remember?'yes':'no'
         },
         success:function (data) {
             if (data.success){
@@ -33,4 +37,20 @@ function login() {
                 alert(data.msg);
     }
     })
+}
+
+function getCookie() {
+    var cookies = document.cookie.split(';');
+    var loginName = '',password = '';
+    for(var i = 0;i < cookies.length;i++){
+        if(cookies[i].indexOf('loginName') != -1 ){
+            loginName = cookies[i].substring('loginName'.length+1);
+        }
+        if(cookies[i].indexOf('password') != -1 ){
+            password = cookies[i].substring('password'.length+2);
+        }
+    }
+     $("#loginName").val(loginName);
+     $("#loginPwd").val(password);
+
 }

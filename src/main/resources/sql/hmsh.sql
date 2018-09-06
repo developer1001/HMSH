@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : zs
-Source Server Version : 50717
+Source Server         : localhost
+Source Server Version : 50522
 Source Host           : localhost:3306
 Source Database       : hmsh
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50522
 File Encoding         : 65001
 
-Date: 2018-07-20 11:07:06
+Date: 2018-07-22 23:00:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -106,7 +106,7 @@ INSERT INTO `sys_menu` VALUES ('04b88c96-8d99-45ec-956c-444efa630020', '4', 'Res
 INSERT INTO `sys_menu` VALUES ('08dfd779-92d5-4cd8-9982-a76176af0f7c', '458113c6-b0be-4d6f-acce-7524f4bc3e88', 'FlowCategory', '流程类别', 'fa fa-tags', '/SystemManage/DataItemList/Index?ItemCode=FlowSort', 'iframe', '1', '1', '0', null, null, '2', '0', '1', null, '2015-11-23 14:42:18', 'System', '超级管理员', '2015-11-27 10:41:42', 'System', '超级管理员');
 INSERT INTO `sys_menu` VALUES ('0d296398-bc0e-4f38-996a-6e24bc88cc53', '5', '待办流程', '待办流程', 'fa fa-hourglass-half', '/FlowManage/FlowBeforeProcessing/Index', 'iframe', '1', '1', '0', null, null, '4', '0', '1', null, '2015-11-23 22:13:39', 'System', '超级管理员', '2016-03-23 18:07:42', '24a055d6-5924-44c5-be52-3715cdd68011', '陈彬彬');
 INSERT INTO `sys_menu` VALUES ('1', '0', 'SysManage', '系统管理', 'fa fa-desktop', null, 'expand', '0', '1', '0', null, null, '1', '0', '1', null, null, null, null, '2015-11-17 11:22:46', 'System', '超级管理员');
-INSERT INTO `sys_menu` VALUES ('10', '2', 'UserManage', '用户管理', 'fa fa-user', '/BaseManage/User/Index', 'iframe', '1', '1', '0', null, null, '8', '0', '1', null, null, null, null, '2016-04-29 11:51:54', 'System', '超级管理员');
+INSERT INTO `sys_menu` VALUES ('10', '2', 'UserManage', '用户管理', 'fa fa-user', 'view/default', 'iframe', '1', '1', '0', null, null, '8', '0', '1', null, null, null, null, '2016-04-29 11:51:54', 'System', '超级管理员');
 INSERT INTO `sys_menu` VALUES ('11', '2', 'RoleManage', '角色管理', 'fa fa-paw', '/BaseManage/Role/Index', 'iframe', '1', '1', '0', null, null, '3', '0', '1', null, null, null, null, '2016-05-23 18:12:29', 'System', '超级管理员');
 INSERT INTO `sys_menu` VALUES ('12', '2', 'JobManage', '职位管理', 'fa fa-briefcase', '/BaseManage/Job/Index', 'iframe', '1', '1', '0', null, null, '6', '0', '1', null, null, null, null, '2016-04-29 12:00:32', 'System', '超级管理员');
 INSERT INTO `sys_menu` VALUES ('13', '2', 'PostManage', '岗位管理', 'fa fa-graduation-cap', '/BaseManage/Post/Index', 'iframe', '1', '1', '0', null, null, '5', '0', '1', null, null, null, null, '2016-04-29 11:59:17', 'System', '超级管理员');
@@ -116,7 +116,7 @@ INSERT INTO `sys_menu` VALUES ('1b642904-d674-495f-a1e1-4814cc543870', '5', '发
 INSERT INTO `sys_menu` VALUES ('1d3797f6-5cd2-41bc-b769-27f2513d61a9', 'ad147f6d-613f-4d2d-8c84-b749d0754f3b', 'ClientInfoManage', '客户管理', 'fa fa-suitcase', '/CustomerManage/Customer/Index', 'iframe', '1', '0', '0', null, null, '3', '0', '1', '客户管理', '2016-03-11 11:57:48', '0f36148c-719f-41e0-8c8c-16ffbc40d0e0', '佘赐雄', '2016-04-29 14:19:05', 'System', '超级管理员');
 INSERT INTO `sys_menu` VALUES ('1ef31fba-7f0a-46f7-b533-49dd0c2e51e0', 'ad147f6d-613f-4d2d-8c84-b749d0754f3b', 'ClienReceivableReport', '收款报表', 'fa fa-bar-chart', '/CustomerManage/ReceivableReport/Index', 'iframe', '1', '1', '0', null, null, '7', '0', '1', '收款报表', '2016-04-20 09:41:51', 'System', '超级管理员', '2016-04-29 14:21:24', 'System', '超级管理员');
 INSERT INTO `sys_menu` VALUES ('2', '0', 'BaseManage', '单位组织', 'fa fa-coffee', null, 'expand', '0', '1', '0', null, null, '2', '0', '1', null, null, null, null, '2016-03-11 11:02:06', '0f36148c-719f-41e0-8c8c-16ffbc40d0e0', '佘赐雄');
-INSERT INTO `sys_menu` VALUES ('21', '1', 'SystemModule', '系统功能', 'fa fa-navicon', '/AuthorizeManage/Module/Index', 'iframe', '1', '0', '0', null, null, '7', '0', '1', '系统导航功能', null, null, null, '2016-04-29 14:13:00', 'System', '超级管理员');
+INSERT INTO `sys_menu` VALUES ('21', '1', 'SystemModule', '系统功能', 'fa fa-navicon', 'view/MyJsp.jsp', 'iframe', '1', '0', '0', null, null, '7', '0', '1', '系统导航功能', null, null, null, '2016-04-29 14:13:00', 'System', '超级管理员');
 INSERT INTO `sys_menu` VALUES ('23713d3a-810f-422d-acd5-39bec28ce47e', '4', 'ScheduleManage', '日程管理', 'fa fa-calendar', '/PublicInfoManage/Schedule/Index', 'iframe', '1', '0', '0', null, null, '6', '0', '1', '日程管理', '2016-04-21 14:15:30', 'System', '超级管理员', '2016-04-21 16:08:46', 'System', '超级管理员');
 INSERT INTO `sys_menu` VALUES ('27b6c487-a2d9-4a3a-a40d-dbba27a53d26', 'b5cb98f6-fb41-4a0f-bc11-469ff117a411', 'FlowMonitor', '流程监控', 'fa fa-eye', '/FlowManage/FlowProcess/MonitoringIndex', 'iframe', '1', '1', '0', null, null, '2', '0', '1', null, '2015-11-23 21:58:17', 'System', '超级管理员', '2016-04-26 12:06:13', 'System', '超级管理员');
 INSERT INTO `sys_menu` VALUES ('2f820f6e-ae2e-472f-82cc-0129a2a57597', '7cec0a0f-7204-4240-b009-312fa0c11cbf', 'DataBaseTable', '数据表管理', 'fa fa-table', '/SystemManage/DataBaseTable/Index', 'iframe', '1', '1', '0', null, null, '3', '0', '1', '数据库表结构', '2015-11-24 09:53:42', 'System', '超级管理员', '2016-04-29 14:08:55', 'System', '超级管理员');

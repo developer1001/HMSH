@@ -62,11 +62,11 @@
                             <span class="hidden-xs">${loginUser.userName}</span>
                         </a>
                         <ul class="dropdown-menu pull-right">
-                            <li><a class="menuItem" data-id="userInfo" href="/SystemManage/User/Info"><i class="fa fa-user"></i>个人信息</a></li>
-                            <li><a href="javascript:void();"><i class="fa fa-trash-o"></i>清空缓存</a></li>
+                            <li><a class="menuItem" data-id="userInfo" href="view/default.html"><i class="fa fa-user"></i>个人信息</a></li>
+                            <%--<li><a href="javascript:void();"><i class="fa fa-trash-o"></i>清空缓存</a></li>--%>
                             <li><a href="javascript:void();"><i class="fa fa-paint-brush"></i>皮肤设置</a></li>
                             <li class="divider"></li>
-                            <li><a href="~/Login/OutLogin"><i class="ace-icon fa fa-power-off"></i>安全退出</a></li>
+                            <li><a href="logout/logout.do"><i class="ace-icon fa fa-power-off"></i>安全退出</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -107,11 +107,11 @@
             <nav class="page-tabs menuTabs">
                 <div class="page-tabs-content" style="margin-left: 0px;">
                     <a href="javascript:;" class="menuTab active" data-id="/view/Default">欢迎首页</a>
-                    <a href="javascript:;" class="menuTab" data-id="/Home/About" style="padding-right: 15px;">平台介绍</a>
-                    <a href="javascript:;" class="menuTab" data-id="/SystemManage/Organize/Index">机构管理 <i class="fa fa-remove"></i></a>
-                    <a href="javascript:;" class="menuTab" data-id="/SystemManage/Role/Index">角色管理 <i class="fa fa-remove"></i></a>
-                    <a href="javascript:;" class="menuTab" data-id="/SystemManage/Duty/Index">岗位管理 <i class="fa fa-remove"></i></a>
-                    <a href="javascript:;" class="menuTab" data-id="/SystemManage/User/Index">用户管理 <i class="fa fa-remove"></i></a>
+                    <%--<a href="javascript:;" class="menuTab" data-id="/Home/About" style="padding-right: 15px;">平台介绍<i class="fa fa-remove"></i></a>--%>
+                    <%--<a href="javascript:;" class="menuTab" data-id="/SystemManage/Organize/Index">机构管理 <i class="fa fa-remove"></i></a>--%>
+                    <%--<a href="javascript:;" class="menuTab" data-id="/SystemManage/Role/Index">角色管理 <i class="fa fa-remove"></i></a>--%>
+                    <%--<a href="javascript:;" class="menuTab" data-id="/SystemManage/Duty/Index">岗位管理 <i class="fa fa-remove"></i></a>--%>
+                    <%--<a href="javascript:;" class="menuTab" data-id="/SystemManage/User/Index">用户管理 <i class="fa fa-remove"></i></a>--%>
                 </div>
             </nav>
             <button class="roll-nav roll-right tabRight">
@@ -140,6 +140,6 @@
 <script src="${path}/js/jQuery-2.2.0.min.js"></script>
 <script src="${path}/staticResource/javascript/bootstrap/js/bootstrap.min.js"></script>
 <script src="${path}/staticResource/javascript/main.js"></script>
-<script src="${path}/staticResource/javascript/main2.js"></script>
+<%--<script src="${path}/staticResource/javascript/main2.js"></script>--%>
 </body>
 </html>
