@@ -3,7 +3,7 @@ function saveOrUpdate(data){
 		//编辑
 		$.ajax({  
 	         type : "POST",  
-	         url : "/xcrx-sdp2-web/service/treeMenu/edit",
+	         url : "/edit",
 	         data : {
 	        	 	 "id":data.node_id,
 	           		 "menu_name":data.menu_name,
@@ -22,7 +22,7 @@ function saveOrUpdate(data){
 		console.log(data);
 		$.ajax({  
 	         type : "POST",  
-	         url : "/xcrx-sdp2-web/service/treeMenu/create",
+	         url : "/create",
 	         data : {
 	           		 "menu_name":data.menu_name,
 	           		 "remark":data.remark,
@@ -41,7 +41,7 @@ function deleteNode(node_id){
 	if(node_id != null && node_id != undefined && node_id != ''){
 		$.ajax({  
 	         type : "POST",  
-	         url : "/xcrx-sdp2-web/service/treeMenu/delete",
+	         url : "/delete",
 	         data : {
 	        	 	 "ids":node_id,	           		
 	         },

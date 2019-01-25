@@ -2,8 +2,6 @@ package com.zgc.base.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletWebRequest;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

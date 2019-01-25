@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="${layPath}/css/layui.css"  media="all">
 <title>Insert title here</title>
 </head>
-<script type="text/javascript" src="/xcrx-sdp2-web/sdp2/plugins/jquery/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="/jquery/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 function edit(data){
 	 $.ajax({  
          type : "POST",  
-         url : "/xcrx-sdp2-web/service/menuLib/edit",
+         url : "/edit",
          data : {
         	 	 "id":data.id,
            		 "name":data.name,

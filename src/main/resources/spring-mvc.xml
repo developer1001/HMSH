@@ -36,16 +36,17 @@
     </bean>
 
     <!-- Session失效拦截 ,不需要登录拦截的话，注掉这个拦截配置即可-->
-    <mvc:interceptors>
-        <!-- 定义拦截器 -->
-        <mvc:interceptor>
-            <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller -->
-            <mvc:mapping path="/**" />
-            <!-- 不需要拦截的地址 -->
-            <mvc:exclude-mapping path="/login.do" />
-            <bean class="com.zgc.base.filter.MvcSessionInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--&lt;!&ndash; 定义拦截器 &ndash;&gt;-->
+        <!--<mvc:interceptor>-->
+            <!--&lt;!&ndash; 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller &ndash;&gt;-->
+            <!--<mvc:mapping path="/**" />-->
+            <!--&lt;!&ndash; 不需要拦截的地址 &ndash;&gt;-->
+            <!--<mvc:exclude-mapping path="/login.do" />-->
+            <!--<bean class="com.zgc.base.filter.MvcSessionInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
+
     <!-- 当在web.xml 中   DispatcherServlet使用 <url-pattern>/</url-pattern> 映射时，能映射静态资源 -->
     <!--<mvc:default-servlet-handler />-->
     <!-- 静态资源映射 -->

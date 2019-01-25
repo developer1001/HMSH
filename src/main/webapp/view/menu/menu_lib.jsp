@@ -34,7 +34,7 @@
   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>  
 </script>       
 <script src="${layPath}/layui.js"></script>
-<script type="text/javascript" src="/xcrx-sdp2-web/sdp2/plugins/jquery/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="//plugins/jquery/jquery-1.12.4.js"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
 layui.use(['layer', 'form','table'], function(){
@@ -43,7 +43,7 @@ layui.use(['layer', 'form','table'], function(){
   //方法级渲染
   table.render({
     elem: '#LAY_table_user'
-    ,url: '/xcrx-sdp2-web/service/menuLib/list'
+    ,url: '/list'
     ,toolbar: '#toolbarDemo'
     ,cols: [[
       {checkbox: true, fixed: true}
@@ -73,7 +73,7 @@ layui.use(['layer', 'form','table'], function(){
     	  //执行删除方法    	
         obj.del();
         layer.close(index);
-        $.post("/xcrx-sdp2-web/service/menuLib/delete", { ids: data.id }, function (data) {
+        $.post("/delete", { ids: data.id }, function (data) {
         	location.reload();
         })
       });
@@ -85,7 +85,7 @@ layui.use(['layer', 'form','table'], function(){
             shade: false,
             maxmin: true, //开启最大化最小化按钮
             area: ['893px', '600px'],
-            content: '/xcrx-sdp2-web/sdp2/menu/editMenuLib.jsp',
+            content: '/editMenuLib.jsp',
             success: function(layero, index){
                 var body = layer.getChildFrame('body', index);
                 var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
@@ -106,7 +106,7 @@ layui.use(['layer', 'form','table'], function(){
             shade: false,
             maxmin: true, //开启最大化最小化按钮
             area: ['1300px', '600px'],
-            content: '/xcrx-sdp2-web/sdp2/menu/menu_config.jsp',
+            content: '/menu_config.jsp',
             success: function(layero, index){
                 var body = layer.getChildFrame('body', index);
                 var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
@@ -145,7 +145,7 @@ layui.use(['layer', 'form','table'], function(){
         ,maxmin: true
         ,offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
         ,id: 'layerDemo'+type //防止重复弹出
-        ,content: '/xcrx-sdp2-web/sdp2/menu/addMenuLib.jsp'
+        ,content: '/addMenuLib.jsp'
         ,btnAlign: 'c' //按钮居中
         ,shade: 0 //不显示遮罩
         ,yes: function(){
