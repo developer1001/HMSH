@@ -183,6 +183,14 @@
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>3.1.8</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.websocket/javax.websocket-api -->
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.1</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!--语音处理模块-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
