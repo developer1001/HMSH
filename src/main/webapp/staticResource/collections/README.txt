@@ -7,3 +7,4 @@ css：
 模块：
     1）登录
     2）cxf的webservice，
+    3）webSocket在线聊天室demo
