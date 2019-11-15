@@ -11,7 +11,7 @@
     <title>Title</title>
     <style>
         body{
-            background-image:url('staticResource/img/welcome.jpg');
+            background-image:url('../staticResource/img/welcome.jpg');
             background-size:100%;
         }
         .di{

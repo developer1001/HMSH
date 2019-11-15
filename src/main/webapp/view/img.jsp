@@ -12,12 +12,12 @@
 </head>
 
 <body>
-<img id="vimg" src="http://localhost:8081/HMSH/code.do"/>
+<img id="vimg" src="http://localhost:8081/HMSH/code"/>
 <div>
     code2
 </div>
-<img id="vimg2" src="http://localhost:8081/HMSH/code2.do"/>
-<script src="js/jquery-3.1.1.js"></script>
-<script src="js/imageUtil.js"></script>
+<img id="vimg2" src="http://localhost:8081/HMSH/code2"/>
+<script src="../js/jquery-3.1.1.js"></script>
+<script src="../js/imageUtil.js"></script>
 </body>
 </html>

@@ -67,7 +67,7 @@
     <!-- 拦截设置 -->
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>*.do</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
     <!--不拦截静态资源-->
     <!--<servlet-mapping>-->

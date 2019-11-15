@@ -26,7 +26,7 @@
 					<canvas id="demo-canvas"></canvas>
 					<div class="logo_box">
 						<h3>欢迎你</h3>
-						<form action="../login.do" name="f" method="post">
+						<form action="../login" name="f" method="post">
 							<div class="input_outer">
 								<span class="u_user"></span>
 								<input name="loginName" id="loginName" class="text"

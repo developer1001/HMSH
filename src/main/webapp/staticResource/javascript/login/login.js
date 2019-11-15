@@ -16,7 +16,7 @@ function login() {
     var pwd = $("#loginPwd").val();
     var remember = $("input[type='checkbox']").is(':checked');
     $.ajax({
-        url:"../login.do",
+        url:"../login",
         method:"post",
         dataType:"json",
         data:{
@@ -31,7 +31,7 @@ function login() {
                 loginUser.loginName = data.data.loginName;
                 loginUser.userName = data.data.userName;
                 localStorage.setItem("loginUser",JSON.stringify(loginUser));
-                window.location.href="../index.do";
+                window.location.href="../index";
             }
             else
                 alert(data.msg);

@@ -14,10 +14,10 @@
     <%--<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">--%>
     <%--<meta http-equiv="description" content="This is my page">--%>
 </head>
-<link rel="stylesheet" href="staticResource/css/index.css" type="text/css">
+<link rel="stylesheet" href="../staticResource/css/index.css" type="text/css">
 <%--引入jquery--%>
-<script src="js/jquery-3.1.1.js"></script>
-<script src="staticResource/javascript/index.js"></script>
+<script src="../js/jquery-3.1.1.js"></script>
+<script src="../staticResource/javascript/index.js"></script>
 <body>
 <div>
 <div class="findUser">
@@ -47,7 +47,7 @@
 </div>
 </div>
 <div>
-    <a href="user/toNewPage.do">跳转测试</a>
+    <a href="user/toNewPage">跳转测试</a>
 </div>
 </body>
 </html>
