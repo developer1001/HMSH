@@ -1,7 +1,8 @@
 $(function () {
     $("body").keydown(function() {
         if (event.keyCode == "13") {//keyCode=13是回车键
-            $('#loginBtn').click();
+            // $('#loginBtn').click();
+            document.forms['form'].submit();
         }
     });
 
@@ -25,7 +26,7 @@ function login() {
             remember:remember?'yes':'no'
         },
         success:function (data) {
-            if (data.success){
+           /* if (data.success){
                 var loginUser = {};
                 loginUser.Id = data.data.id;
                 loginUser.loginName = data.data.loginName;
@@ -34,11 +35,13 @@ function login() {
                 window.location.href="../index";
             }
             else
-                alert(data.msg);
+                alert(data.msg);*/
     }
     })
 }
+function to_main(){
 
+}
 function getCookie() {
     var cookies = document.cookie.split(';');
     var loginName = '',password = '';

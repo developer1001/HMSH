@@ -375,7 +375,7 @@
         $.ajax({
             // url:"getAuth.do",
             async:false,
-            url:"getTreeMenu.do",
+            url:"../getTreeMenu",
             method:"post",
             dataType:"json",
             data:{
@@ -389,7 +389,9 @@
                     alert("菜单信息获取失败，请重新登录");
             },
             error:function (ex) {
-                window.top.parent.location.href = "view/login.jsp";
+                console.log(ex);
+                alert(11);
+                // window.top.parent.location.href = "view/login.jsp";
             }
 
         });

@@ -210,6 +210,6 @@
 
     </dependencies>
     <build>
-        <finalName>HMSH</finalName>
+        <finalName>hmsh</finalName>
     </build>
 </project>
