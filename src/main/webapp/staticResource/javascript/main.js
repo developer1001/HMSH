@@ -390,8 +390,8 @@
             },
             error:function (ex) {
                 console.log(ex);
-                alert(11);
-                // window.top.parent.location.href = "view/login.jsp";
+                alert(555);
+                window.top.parent.location.href = "login.jsp";
             }
 
         });

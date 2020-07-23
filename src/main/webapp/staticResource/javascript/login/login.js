@@ -26,7 +26,7 @@ function login() {
             remember:remember?'yes':'no'
         },
         success:function (data) {
-           /* if (data.success){
+            if (data.success){
                 var loginUser = {};
                 loginUser.Id = data.data.id;
                 loginUser.loginName = data.data.loginName;
@@ -35,7 +35,7 @@ function login() {
                 window.location.href="../index";
             }
             else
-                alert(data.msg);*/
+                alert(data.msg);
     }
     })
 }
