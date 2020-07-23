@@ -2,3 +2,5 @@
 .idea/
 target/
 src/main/resources/jdbc.properties
+.settings
+.project
